@@ -10,7 +10,7 @@ Claude Code:
 
 ```
 /plugin marketplace add giofornari/skills
-/plugin install pack-fundamentals@giordi
+/plugin install pack-fundamentals@giofornari
 ```
 
 Claude Desktop: **Customize > Plugins > Add marketplace**, then `giofornari/skills`.
@@ -26,7 +26,7 @@ Every source tracks its upstream default branch (npm for `honcho`); nothing is p
   ```json
   {
     "extraKnownMarketplaces": {
-      "giordi": {
+      "giofornari": {
         "source": { "source": "github", "repo": "giofornari/skills" },
         "autoUpdate": true
       }
@@ -34,7 +34,7 @@ Every source tracks its upstream default branch (npm for `honcho`); nothing is p
   }
   ```
 
-  By hand: `claude plugin marketplace update giordi`, then `claude plugin update <plugin>@giordi`. Updates apply at the next session or after `/reload-plugins`.
+  By hand: `claude plugin marketplace update giofornari`, then `claude plugin update <plugin>@giofornari`. Updates apply at the next session or after `/reload-plugins`.
 - Claude Desktop: Customize > Plugins, switch on **Sync automatically** for this marketplace, or use **Check for updates**.
 
 ## Prerequisites

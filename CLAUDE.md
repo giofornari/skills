@@ -1,6 +1,6 @@
 # skills
 
-Claude Code and Desktop marketplace `giordi`. `.claude-plugin/marketplace.json` is the single source of truth: one pack per category, every plugin also installable alone.
+Claude Code and Desktop marketplace `giofornari`. `.claude-plugin/marketplace.json` is the single source of truth: one pack per category, every plugin also installable alone.
 
 ## Add a plugin
 
