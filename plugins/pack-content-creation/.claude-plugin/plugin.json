@@ -1,0 +1,9 @@
+{
+  "name": "pack-content-creation",
+  "version": "1.0.0",
+  "description": "Content Creation pack. Members are declared in marketplace.json.",
+  "author": {
+    "name": "giofornari",
+    "url": "https://github.com/giofornari"
+  }
+}

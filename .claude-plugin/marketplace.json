@@ -1,0 +1,608 @@
+{
+  "name": "giordi",
+  "owner": {
+    "name": "giofornari",
+    "url": "https://github.com/giofornari"
+  },
+  "description": "Curated skills, plugins and MCPs: one pack per category, every plugin also installable on its own.",
+  "plugins": [
+    {
+      "name": "pack-fundamentals",
+      "source": "./plugins/pack-fundamentals",
+      "description": "Fundamentals: superpowers, andrej-karpathy-skills, humanizer, ponytail, grill-me, grill-with-docs, grilling, teach, improve-codebase-architecture, triage, retro, writing-for-agents",
+      "category": "fundamentals",
+      "tags": [
+        "pack"
+      ],
+      "dependencies": [
+        "superpowers",
+        "andrej-karpathy-skills",
+        "humanizer",
+        "ponytail",
+        "grill-me",
+        "grill-with-docs",
+        "grilling",
+        "teach",
+        "improve-codebase-architecture",
+        "triage",
+        "retro",
+        "writing-for-agents"
+      ]
+    },
+    {
+      "name": "pack-context-memory",
+      "source": "./plugins/pack-context-memory",
+      "description": "Context & Memory: honcho, session-memory, caveman, graphify",
+      "category": "context-memory",
+      "tags": [
+        "pack"
+      ],
+      "dependencies": [
+        "honcho",
+        "session-memory",
+        "caveman",
+        "graphify"
+      ]
+    },
+    {
+      "name": "pack-design",
+      "source": "./plugins/pack-design",
+      "description": "Design: impeccable, taste-skill, emil-kowalski-skills, hallmark",
+      "category": "design",
+      "tags": [
+        "pack"
+      ],
+      "dependencies": [
+        "impeccable",
+        "taste-skill",
+        "emil-kowalski-skills",
+        "hallmark"
+      ]
+    },
+    {
+      "name": "pack-design-advanced",
+      "source": "./plugins/pack-design-advanced",
+      "description": "Design Advanced: threejs-skills, ux-heuristics, steve-jobs-design-review, hallmark",
+      "category": "design-advanced",
+      "tags": [
+        "pack"
+      ],
+      "dependencies": [
+        "threejs-skills",
+        "ux-heuristics",
+        "steve-jobs-design-review",
+        "hallmark"
+      ]
+    },
+    {
+      "name": "pack-learning",
+      "source": "./plugins/pack-learning",
+      "description": "Learning: understand-anything, anatomy, ppt-master, diagram-design",
+      "category": "learning",
+      "tags": [
+        "pack"
+      ],
+      "dependencies": [
+        "understand-anything",
+        "anatomy",
+        "ppt-master",
+        "diagram-design"
+      ]
+    },
+    {
+      "name": "pack-research",
+      "source": "./plugins/pack-research",
+      "description": "Research: firecrawl, exa, tavily, camoufox",
+      "category": "research",
+      "tags": [
+        "pack"
+      ],
+      "dependencies": [
+        "firecrawl",
+        "exa",
+        "tavily",
+        "camoufox"
+      ]
+    },
+    {
+      "name": "pack-content-creation",
+      "source": "./plugins/pack-content-creation",
+      "description": "Content Creation: openmontage, agent-reach, hyperframes, marketing-skills",
+      "category": "content-creation",
+      "tags": [
+        "pack"
+      ],
+      "dependencies": [
+        "openmontage",
+        "agent-reach",
+        "hyperframes",
+        "marketing-skills"
+      ]
+    },
+    {
+      "name": "superpowers",
+      "source": {
+        "source": "github",
+        "repo": "obra/superpowers"
+      },
+      "description": "Agentic skills framework and development methodology: brainstorming, plans, TDD, debugging, review."
+    },
+    {
+      "name": "andrej-karpathy-skills",
+      "source": {
+        "source": "github",
+        "repo": "multica-ai/andrej-karpathy-skills"
+      },
+      "description": "One CLAUDE.md of guidelines derived from Karpathy's notes on LLM coding pitfalls."
+    },
+    {
+      "name": "humanizer",
+      "source": {
+        "source": "github",
+        "repo": "blader/humanizer"
+      },
+      "description": "Removes signs of AI-generated writing from text."
+    },
+    {
+      "name": "ponytail",
+      "source": {
+        "source": "github",
+        "repo": "DietrichGebert/ponytail"
+      },
+      "description": "Makes the agent think like the laziest senior dev: minimal, no over-engineering."
+    },
+    {
+      "name": "grill-me",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/mattpocock/skills.git",
+        "path": "skills/productivity/grill-me"
+      },
+      "description": "A relentless interview to sharpen a plan or design",
+      "category": "fundamentals",
+      "strict": false,
+      "skills": [
+        "./"
+      ]
+    },
+    {
+      "name": "grill-with-docs",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/mattpocock/skills.git",
+        "path": "skills/engineering/grill-with-docs"
+      },
+      "description": "A relentless interview to sharpen a plan or design, which also creates docs (ADR's and glossary) as we go",
+      "category": "fundamentals",
+      "strict": false,
+      "skills": [
+        "./"
+      ]
+    },
+    {
+      "name": "grilling",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/mattpocock/skills.git",
+        "path": "skills/productivity/grilling"
+      },
+      "description": "Grill the user relentlessly about a plan, decision, or idea",
+      "category": "fundamentals",
+      "strict": false,
+      "skills": [
+        "./"
+      ]
+    },
+    {
+      "name": "teach",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/mattpocock/skills.git",
+        "path": "skills/productivity/teach"
+      },
+      "description": "Teach the user a new skill or concept, within this workspace",
+      "category": "fundamentals",
+      "strict": false,
+      "skills": [
+        "./"
+      ]
+    },
+    {
+      "name": "improve-codebase-architecture",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/mattpocock/skills.git",
+        "path": "skills/engineering/improve-codebase-architecture"
+      },
+      "description": "Scan a codebase for deepening opportunities, present them as a visual HTML report, then grill through whichever one you pick",
+      "category": "fundamentals",
+      "strict": false,
+      "skills": [
+        "./"
+      ]
+    },
+    {
+      "name": "triage",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/mattpocock/skills.git",
+        "path": "skills/engineering/triage"
+      },
+      "description": "Move issues and external PRs through a state machine of triage roles, categorise, verify, grill if needed, and write agent-ready briefs",
+      "category": "fundamentals",
+      "strict": false,
+      "skills": [
+        "./"
+      ]
+    },
+    {
+      "name": "retro",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/mattpocock/skills.git",
+        "path": "skills/engineering/retro"
+      },
+      "description": "Conduct a retrospective on a coding session",
+      "category": "fundamentals",
+      "strict": false,
+      "skills": [
+        "./"
+      ]
+    },
+    {
+      "name": "writing-for-agents",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/mattpocock/skills.git",
+        "path": "skills/productivity/writing-for-agents"
+      },
+      "description": "Writing documents for agents",
+      "category": "fundamentals",
+      "strict": false,
+      "skills": [
+        "./"
+      ]
+    },
+    {
+      "name": "mattpocock-skills",
+      "source": {
+        "source": "github",
+        "repo": "mattpocock/skills"
+      },
+      "description": "The whole mattpocock/skills repo. The pack installs the extracted skills only.",
+      "tags": [
+        "full-repo"
+      ]
+    },
+    {
+      "name": "interview-me",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/addyosmani/agent-skills.git",
+        "path": "skills/interview-me"
+      },
+      "description": "Extracts what the user actually wants instead of what they think they should want",
+      "category": "fundamentals",
+      "strict": false,
+      "skills": [
+        "./"
+      ]
+    },
+    {
+      "name": "idea-refine",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/addyosmani/agent-skills.git",
+        "path": "skills/idea-refine"
+      },
+      "description": "Refines raw ideas into sharp, actionable concepts through structured divergent and convergent thinking",
+      "category": "fundamentals",
+      "strict": false,
+      "skills": [
+        "./"
+      ]
+    },
+    {
+      "name": "debugging-and-error-recovery",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/addyosmani/agent-skills.git",
+        "path": "skills/debugging-and-error-recovery"
+      },
+      "description": "Guides systematic root-cause debugging",
+      "category": "fundamentals",
+      "strict": false,
+      "skills": [
+        "./"
+      ]
+    },
+    {
+      "name": "shipping-and-launch",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/addyosmani/agent-skills.git",
+        "path": "skills/shipping-and-launch"
+      },
+      "description": "Prepares production launches",
+      "category": "fundamentals",
+      "strict": false,
+      "skills": [
+        "./"
+      ]
+    },
+    {
+      "name": "agent-skills",
+      "source": {
+        "source": "github",
+        "repo": "addyosmani/agent-skills"
+      },
+      "description": "The whole addyosmani/agent-skills repo: production-grade engineering skills.",
+      "tags": [
+        "full-repo"
+      ]
+    },
+    {
+      "name": "honcho",
+      "source": {
+        "source": "npm",
+        "package": "@honcho-ai/claude-honcho"
+      },
+      "description": "Persistent memory for Claude Code sessions using Honcho.",
+      "strict": false
+    },
+    {
+      "name": "session-memory",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/thedotmack/claude-mem.git",
+        "path": "plugin"
+      },
+      "description": "claude-mem by thedotmack: captures, compresses and re-injects what the agent did across sessions."
+    },
+    {
+      "name": "caveman",
+      "source": {
+        "source": "github",
+        "repo": "JuliusBrussee/caveman"
+      },
+      "description": "Terse output mode and token-saving tooling."
+    },
+    {
+      "name": "graphify",
+      "source": "./plugins/graphify",
+      "description": "Sets up Graphify, the codebase knowledge-graph CLI, through its official installer."
+    },
+    {
+      "name": "impeccable",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/pbakaus/impeccable.git",
+        "path": "plugin"
+      },
+      "description": "Design vocabulary for coding agents: steer with polish and boldness."
+    },
+    {
+      "name": "taste-skill",
+      "source": {
+        "source": "github",
+        "repo": "Leonxlnx/taste-skill"
+      },
+      "description": "Art direction for websites, product pages and dashboards (taste-skill v2).",
+      "skills": [
+        "./skills/taste-skill"
+      ]
+    },
+    {
+      "name": "emil-kowalski-skills",
+      "source": {
+        "source": "github",
+        "repo": "emilkowalski/skills"
+      },
+      "description": "Emil Kowalski's skills for designers and engineers: animation, UI polish, design engineering."
+    },
+    {
+      "name": "hallmark",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/Nutlope/hallmark.git",
+        "path": "skills"
+      },
+      "description": "Anti-AI-slop design skill.",
+      "strict": false,
+      "skills": [
+        "./hallmark"
+      ]
+    },
+    {
+      "name": "ui-ux-pro-max",
+      "source": {
+        "source": "github",
+        "repo": "nextlevelbuilder/ui-ux-pro-max-skill"
+      },
+      "description": "Design intelligence: searchable styles, palettes, typography and UX guidelines.",
+      "strict": false,
+      "tags": [
+        "bonus"
+      ]
+    },
+    {
+      "name": "threejs-skills",
+      "source": {
+        "source": "github",
+        "repo": "CloudAI-X/threejs-skills"
+      },
+      "description": "Three.js: scene, geometry, materials, shaders, animation, postprocessing, React Three Fiber."
+    },
+    {
+      "name": "ux-heuristics",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wondelai/skills.git",
+        "path": "ux-heuristics"
+      },
+      "description": "Evaluate and improve interface usability using heuristic analysis",
+      "category": "design-advanced",
+      "strict": false,
+      "skills": [
+        "./"
+      ]
+    },
+    {
+      "name": "steve-jobs-design-review",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wondelai/skills.git",
+        "path": "steve-jobs-design-review"
+      },
+      "description": "Review designs, products, and features with Steve Jobs' standards: ruthless simplicity, focus, and end-to-end excellence",
+      "category": "design-advanced",
+      "strict": false,
+      "skills": [
+        "./"
+      ]
+    },
+    {
+      "name": "understand-anything",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/Egonex-AI/Understand-Anything.git",
+        "path": "understand-anything-plugin"
+      },
+      "description": "Turns any codebase into an interactive knowledge graph you can explore and query."
+    },
+    {
+      "name": "anatomy",
+      "source": {
+        "source": "github",
+        "repo": "wheresryan22/anatomy"
+      },
+      "description": "Detailed interactive isometric illustrations.",
+      "strict": false,
+      "skills": [
+        "./"
+      ]
+    },
+    {
+      "name": "ppt-master",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/hugohe3/ppt-master.git",
+        "path": "skills"
+      },
+      "description": "Turns documents or topics into native PowerPoint decks."
+    },
+    {
+      "name": "diagram-design",
+      "source": {
+        "source": "github",
+        "repo": "cathrynlavery/diagram-design"
+      },
+      "description": "Editorial diagram design."
+    },
+    {
+      "name": "i-have-adhd",
+      "source": {
+        "source": "github",
+        "repo": "ayghri/i-have-adhd"
+      },
+      "description": "Stops the agent burying the answer: ADHD-friendly responses.",
+      "tags": [
+        "bonus"
+      ]
+    },
+    {
+      "name": "firecrawl",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/firecrawl/firecrawl-claude-plugin.git",
+        "sha": "3e1fb0c319d71b067906b8b602208dded3932cdb"
+      },
+      "description": "Firecrawl: scrape, crawl, search and extract the web as LLM-ready data. Pinned to the claude-plugins-official commit."
+    },
+    {
+      "name": "exa",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/exa-labs/exa-mcp-server.git",
+        "sha": "15ffb50519e719dc791cdc750ce5ed1934c0a1ed"
+      },
+      "description": "Exa web search, deep research and content extraction. Pinned to the claude-plugins-official commit."
+    },
+    {
+      "name": "tavily",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/tavily-ai/skills.git",
+        "sha": "778122e5f9c680f541eeceda5a5b36405eb7980c"
+      },
+      "description": "Tavily search, extract, crawl and research. Pinned to the claude-plugins-official commit."
+    },
+    {
+      "name": "camoufox",
+      "source": "./plugins/camoufox",
+      "description": "Camoufox MCP: anti-detect Firefox browsing (navigate, content, screenshot, click, fill, evaluate)."
+    },
+    {
+      "name": "last30days",
+      "source": {
+        "source": "github",
+        "repo": "mvanhorn/last30days-skill"
+      },
+      "description": "Researches any topic across Reddit, X, YouTube and HN over the last 30 days.",
+      "tags": [
+        "bonus"
+      ]
+    },
+    {
+      "name": "career-ops",
+      "source": {
+        "source": "github",
+        "repo": "career-ops-hq/career-ops"
+      },
+      "description": "Open-source AI job search agent.",
+      "tags": [
+        "bonus"
+      ]
+    },
+    {
+      "name": "openmontage",
+      "source": {
+        "source": "github",
+        "repo": "calesthio/OpenMontage"
+      },
+      "description": "OpenMontage agentic video production: its 91 skills. The full pipeline needs the project cloned.",
+      "strict": false,
+      "skills": [
+        "./.agents/skills"
+      ]
+    },
+    {
+      "name": "agent-reach",
+      "source": {
+        "source": "github",
+        "repo": "Panniantong/Agent-Reach"
+      },
+      "description": "Lets the agent read and search the internet across platforms. Needs the Agent-Reach CLI.",
+      "strict": false,
+      "skills": [
+        "./agent_reach/skill"
+      ]
+    },
+    {
+      "name": "hyperframes",
+      "source": {
+        "source": "github",
+        "repo": "heygen-com/hyperframes"
+      },
+      "description": "Write HTML, render video: all HyperFrames skills in one bundle."
+    },
+    {
+      "name": "marketing-skills",
+      "source": {
+        "source": "github",
+        "repo": "coreyhaines31/marketingskills"
+      },
+      "description": "Marketing skills: CRO, copywriting, SEO and more."
+    }
+  ]
+}
