@@ -10,12 +10,12 @@ Claude Code:
 
 ```
 /plugin marketplace add giofornari/skills
-/plugin install pack-fundamentals@giofornari
+/plugin install 1-pack-fundamentals@giofornari
 ```
 
 Claude Desktop: **Customize > Plugins > Add marketplace**, then `giofornari/skills`.
 
-Packs: `pack-fundamentals`, `pack-context-memory`, `pack-design`, `pack-design-advanced`, `pack-learning`, `pack-research`, `pack-content-creation`. Plugins tagged `bonus` and the full-repo plugins (`mattpocock-skills`, `agent-skills`) belong to no pack. Browse everything with `/plugin`.
+Packs: `1-pack-fundamentals`, `2-pack-context-memory`, `3-pack-design`, `4-pack-design-advanced`, `5-pack-learning`, `6-pack-research`, `7-pack-content-creation`. Plugins tagged `bonus` and the full-repo plugins (`mattpocock-skills`, `agent-skills`) belong to no pack. Browse everything with `/plugin`.
 
 ## Updates
 

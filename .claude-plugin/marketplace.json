@@ -7,8 +7,8 @@
   "description": "Curated skills, plugins and MCPs: one pack per category, every plugin also installable on its own.",
   "plugins": [
     {
-      "name": "pack-fundamentals",
-      "source": "./plugins/pack-fundamentals",
+      "name": "1-pack-fundamentals",
+      "source": "./plugins/1-pack-fundamentals",
       "description": "Fundamentals: superpowers, andrej-karpathy-skills, humanizer, ponytail, grill-me, grill-with-docs, grilling, teach, improve-codebase-architecture, triage, retro, writing-for-agents",
       "category": "Fundamentals",
       "tags": [
@@ -30,8 +30,8 @@
       ]
     },
     {
-      "name": "pack-context-memory",
-      "source": "./plugins/pack-context-memory",
+      "name": "2-pack-context-memory",
+      "source": "./plugins/2-pack-context-memory",
       "description": "Context & Memory: honcho, session-memory, caveman, graphify",
       "category": "Context & Memory",
       "tags": [
@@ -45,8 +45,8 @@
       ]
     },
     {
-      "name": "pack-design",
-      "source": "./plugins/pack-design",
+      "name": "3-pack-design",
+      "source": "./plugins/3-pack-design",
       "description": "Design: impeccable, taste-skill, emil-kowalski-skills, hallmark",
       "category": "Design",
       "tags": [
@@ -60,8 +60,8 @@
       ]
     },
     {
-      "name": "pack-design-advanced",
-      "source": "./plugins/pack-design-advanced",
+      "name": "4-pack-design-advanced",
+      "source": "./plugins/4-pack-design-advanced",
       "description": "Design Advanced: threejs-skills, ux-heuristics, steve-jobs-design-review, hallmark",
       "category": "Design Advanced",
       "tags": [
@@ -75,8 +75,8 @@
       ]
     },
     {
-      "name": "pack-learning",
-      "source": "./plugins/pack-learning",
+      "name": "5-pack-learning",
+      "source": "./plugins/5-pack-learning",
       "description": "Learning: understand-anything, anatomy, ppt-master, diagram-design",
       "category": "Learning",
       "tags": [
@@ -90,8 +90,8 @@
       ]
     },
     {
-      "name": "pack-research",
-      "source": "./plugins/pack-research",
+      "name": "6-pack-research",
+      "source": "./plugins/6-pack-research",
       "description": "Research: firecrawl, exa, tavily, camoufox",
       "category": "Research",
       "tags": [
@@ -105,8 +105,8 @@
       ]
     },
     {
-      "name": "pack-content-creation",
-      "source": "./plugins/pack-content-creation",
+      "name": "7-pack-content-creation",
+      "source": "./plugins/7-pack-content-creation",
       "description": "Content Creation: openmontage, agent-reach, hyperframes, marketing-skills",
       "category": "Content Creation",
       "tags": [
