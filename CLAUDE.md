@@ -15,3 +15,4 @@ Claude Code and Desktop marketplace `giofornari`. `.claude-plugin/marketplace.js
 - Keep sources unpinned and set no `version` in `marketplace.json` or any `plugin.json`: updates then follow upstream. The validator's "No version specified" warnings are expected.
 - Pack names start with a digit (`1-pack-…`): the `/plugin` list sorts alphabetically, and digits sort first.
 - Packs hold dependencies only. Local code lives in `plugins/`: the pack manifests, `camoufox`, `graphify`.
+- The README tables and every `docs/*.png` mirror `marketplace.json` (names, descriptions, categories, token costs). Update them in the same commit.
