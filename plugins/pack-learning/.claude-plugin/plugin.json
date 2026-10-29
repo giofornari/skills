@@ -1,6 +1,5 @@
 {
   "name": "pack-learning",
-  "version": "1.0.0",
   "description": "Learning pack. Members are declared in marketplace.json.",
   "author": {
     "name": "giofornari",

@@ -1,6 +1,5 @@
 {
   "name": "pack-design",
-  "version": "1.0.0",
   "description": "Design pack. Members are declared in marketplace.json.",
   "author": {
     "name": "giofornari",

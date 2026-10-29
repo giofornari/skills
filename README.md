@@ -17,6 +17,26 @@ Claude Desktop: **Customize > Plugins > Add marketplace**, then `giofornari/skil
 
 Packs: `pack-fundamentals`, `pack-context-memory`, `pack-design`, `pack-design-advanced`, `pack-learning`, `pack-research`, `pack-content-creation`. Plugins tagged `bonus` and the full-repo plugins (`mattpocock-skills`, `agent-skills`) belong to no pack. Browse everything with `/plugin`.
 
+## Updates
+
+Every source tracks its upstream default branch (npm for `honcho`); nothing is pinned and no manifest sets a `version`, so a new upstream release or commit counts as an update.
+
+- Claude Code: enable auto-update once, in `~/.claude/settings.json`:
+
+  ```json
+  {
+    "extraKnownMarketplaces": {
+      "giordi": {
+        "source": { "source": "github", "repo": "giofornari/skills" },
+        "autoUpdate": true
+      }
+    }
+  }
+  ```
+
+  By hand: `claude plugin marketplace update giordi`, then `claude plugin update <plugin>@giordi`. Updates apply at the next session or after `/reload-plugins`.
+- Claude Desktop: Customize > Plugins, switch on **Sync automatically** for this marketplace, or use **Check for updates**.
+
 ## Prerequisites
 
 - `graphify`: needs `uv`; its skill installs the CLI through Graphify's own installer.

@@ -514,28 +514,25 @@
       "name": "firecrawl",
       "source": {
         "source": "url",
-        "url": "https://github.com/firecrawl/firecrawl-claude-plugin.git",
-        "sha": "3e1fb0c319d71b067906b8b602208dded3932cdb"
+        "url": "https://github.com/firecrawl/firecrawl-claude-plugin.git"
       },
-      "description": "Firecrawl: scrape, crawl, search and extract the web as LLM-ready data. Pinned to the claude-plugins-official commit."
+      "description": "Firecrawl: scrape, crawl, search and extract the web as LLM-ready data."
     },
     {
       "name": "exa",
       "source": {
         "source": "url",
-        "url": "https://github.com/exa-labs/exa-mcp-server.git",
-        "sha": "15ffb50519e719dc791cdc750ce5ed1934c0a1ed"
+        "url": "https://github.com/exa-labs/exa-mcp-server.git"
       },
-      "description": "Exa web search, deep research and content extraction. Pinned to the claude-plugins-official commit."
+      "description": "Exa web search, deep research and content extraction."
     },
     {
       "name": "tavily",
       "source": {
         "source": "url",
-        "url": "https://github.com/tavily-ai/skills.git",
-        "sha": "778122e5f9c680f541eeceda5a5b36405eb7980c"
+        "url": "https://github.com/tavily-ai/skills.git"
       },
-      "description": "Tavily search, extract, crawl and research. Pinned to the claude-plugins-official commit."
+      "description": "Tavily search, extract, crawl and research."
     },
     {
       "name": "camoufox",

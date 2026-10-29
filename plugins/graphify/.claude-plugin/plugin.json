@@ -1,6 +1,5 @@
 {
   "name": "graphify",
-  "version": "1.0.0",
   "description": "Sets up Graphify, the codebase knowledge-graph CLI, through its official installer.",
   "author": {
     "name": "giofornari",

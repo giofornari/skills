@@ -1,6 +1,5 @@
 {
   "name": "camoufox",
-  "version": "1.0.0",
   "description": "Camoufox MCP: anti-detect Firefox browsing (navigate, content, screenshot, click, fill, evaluate).",
   "author": {
     "name": "giofornari",
