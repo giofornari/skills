@@ -60,8 +60,8 @@ Entries come in four kinds:
 | `4-pack-design-advanced` | 4 plugins | ~1,481 |
 | `5-pack-learning` | 4 plugins | ~1,648 |
 | `6-pack-research` | 4 plugins | ~1,214 |
-| `7-pack-content-creation` | 4 plugins | ~19,030 |
-| `8-pack-marketing-strategy` | 4 plugins | ~5,019 |
+| `7-pack-content-creation` | 4 plugins | ~8,578 |
+| `8-pack-marketing-strategy` | 5 plugins | ~15,648 |
 
 Plugins tagged `bonus` and the two full-repo plugins belong to no pack.
 
@@ -176,7 +176,7 @@ Plugins tagged `bonus` and the two full-repo plugins belong to no pack.
 | [`openmontage`](https://github.com/calesthio/OpenMontage) | OpenMontage agentic video production: its 91 skills. The full pipeline needs the project cloned | 91 skills | ~7,762 |
 | [`agent-reach`](https://github.com/Panniantong/Agent-Reach) | Lets the agent read and search the internet across platforms. Needs the Agent-Reach CLI | 1 skill | ~88 |
 | [`hyperframes`](https://github.com/heygen-com/hyperframes) | Write HTML, render video: all HyperFrames skills in one bundle | 7 skills | ~551 |
-| [`marketing-skills`](https://github.com/coreyhaines31/marketingskills) | Marketing skills: CRO, copywriting, SEO and more | 52 skills | ~10,629 |
+| [`remotion`](https://github.com/remotion-dev/claude-code-plugin) | Remotion: programmatic videos with React. Best practices, captions, rendering, studio and more | 12 skills | ~177 |
 
 ### Marketing & Strategy
 
@@ -188,6 +188,7 @@ Plugins tagged `bonus` and the two full-repo plugins belong to no pack.
 | [`seo-extensions`](https://github.com/AgriciDaniel/claude-seo/tree/HEAD/extensions) | Optional SEO data skills for Ahrefs, Bing Webmaster, Firecrawl, Matomo, Profound, SE Ranking and Unlighthouse. Each needs its own account or API key | 7 skills | ~414 |
 | [`marketing-cro`](https://github.com/wondelai/skills) | Conversion and marketing frameworks: CRO methodology, StoryBrand, Scorecard Marketing, Contagious, 1-Page Marketing Plan | 5 skills | ~788 |
 | [`sales-influence`](https://github.com/wondelai/skills) | Sales and persuasion frameworks: Cialdini's influence psychology, Predictable Revenue, Made to Stick, $100M Offers | 4 skills | ~694 |
+| [`marketing-skills`](https://github.com/coreyhaines31/marketingskills) | Marketing skills: CRO, copywriting, SEO and more | 52 skills | ~10,629 |
 
 ## Prerequisites
 
@@ -221,4 +222,4 @@ No source is pinned and no manifest sets a `version`, so every upstream release 
 
 ## Licenses
 
-Each plugin keeps its upstream license and authors. `openmontage` is AGPL-3.0, `education-agent-skills` is CC BY-SA 4.0 and `andrej-karpathy-skills` declares none. The original content here (manifests, `camoufox` server, `graphify` skill) is MIT.
+Each plugin keeps its upstream license and authors. `openmontage` is AGPL-3.0, `education-agent-skills` is CC BY-SA 4.0 and `andrej-karpathy-skills` declares none. `remotion` is MIT as a plugin, but the Remotion framework has its own license: free for individuals and small teams, paid for larger companies. The original content here (manifests, `camoufox` server, `graphify` skill) is MIT.

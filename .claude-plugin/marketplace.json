@@ -107,7 +107,7 @@
     {
       "name": "7-pack-content-creation",
       "source": "./plugins/7-pack-content-creation",
-      "description": "Content Creation: openmontage, agent-reach, hyperframes, marketing-skills",
+      "description": "Content Creation: openmontage, agent-reach, hyperframes, remotion",
       "category": "Content Creation",
       "tags": [
         "pack"
@@ -116,13 +116,13 @@
         "openmontage",
         "agent-reach",
         "hyperframes",
-        "marketing-skills"
+        "remotion"
       ]
     },
     {
       "name": "8-pack-marketing-strategy",
       "source": "./plugins/8-pack-marketing-strategy",
-      "description": "Marketing & Strategy: seo, seo-extensions, marketing-cro, sales-influence",
+      "description": "Marketing & Strategy: seo, seo-extensions, marketing-cro, sales-influence, marketing-skills",
       "category": "Marketing & Strategy",
       "tags": [
         "pack"
@@ -131,7 +131,8 @@
         "seo",
         "seo-extensions",
         "marketing-cro",
-        "sales-influence"
+        "sales-influence",
+        "marketing-skills"
       ]
     },
     {
@@ -688,12 +689,12 @@
       "category": "Content Creation"
     },
     {
-      "name": "marketing-skills",
+      "name": "remotion",
       "source": {
         "source": "github",
-        "repo": "coreyhaines31/marketingskills"
+        "repo": "remotion-dev/claude-code-plugin"
       },
-      "description": "Marketing skills: CRO, copywriting, SEO and more.",
+      "description": "Remotion: programmatic videos with React. Best practices, captions, rendering, studio and more.",
       "category": "Content Creation"
     },
     {
@@ -757,6 +758,15 @@
         "./made-to-stick",
         "./hundred-million-offers"
       ]
+    },
+    {
+      "name": "marketing-skills",
+      "source": {
+        "source": "github",
+        "repo": "coreyhaines31/marketingskills"
+      },
+      "description": "Marketing skills: CRO, copywriting, SEO and more.",
+      "category": "Marketing & Strategy"
     }
   ]
 }
