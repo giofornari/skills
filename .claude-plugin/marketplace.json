@@ -547,10 +547,34 @@
     {
       "name": "education-agent-skills",
       "source": {
-        "source": "github",
-        "repo": "GarethManning/education-agent-skills"
+        "source": "git-subdir",
+        "url": "https://github.com/GarethManning/education-agent-skills.git",
+        "path": "skills"
       },
       "description": "165 evidence-grounded skills for teachers, school leaders and EdTech: pedagogy, learning science, curriculum, assessment.",
+      "strict": false,
+      "skills": [
+        "./ai-learning-science",
+        "./ai-literacy",
+        "./curriculum-alignment",
+        "./curriculum-assessment",
+        "./eal-language-development",
+        "./environmental-experiential-learning",
+        "./explicit-instruction",
+        "./global-cross-cultural-pedagogies",
+        "./historical-thinking",
+        "./inclusive-design",
+        "./literacy-critical-thinking",
+        "./memory-learning-science",
+        "./montessori-alternative-approaches",
+        "./original-frameworks",
+        "./professional-learning",
+        "./questioning-discussion",
+        "./self-regulated-learning",
+        "./student-learning",
+        "./systems-thinking",
+        "./wellbeing-motivation-agency"
+      ],
       "tags": [
         "bonus"
       ],

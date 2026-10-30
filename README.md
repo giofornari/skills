@@ -146,7 +146,7 @@ Plugins tagged `bonus` and the two full-repo plugins belong to no pack.
 |---|---|---|---|
 | [`i-have-adhd`](https://github.com/ayghri/i-have-adhd) | Stops the agent burying the answer: ADHD-friendly responses | 1 skill | ~67 |
 | [`academic-pptx-skill`](https://github.com/Gabberflast/academic-pptx-skill) | Academic presentations (talks, seminars, thesis defenses): action titles, structured argument, citation standards | 1 skill | ~205 |
-| [`education-agent-skills`](https://github.com/GarethManning/education-agent-skills) | 165 evidence-grounded skills for teachers, school leaders and EdTech: pedagogy, learning science, curriculum, assessment | 165 skills | ~10,262 |
+| [`education-agent-skills`](https://github.com/GarethManning/education-agent-skills/tree/HEAD/skills) | 165 evidence-grounded skills for teachers, school leaders and EdTech: pedagogy, learning science, curriculum, assessment | 165 skills | ~10,262 |
 
 ### Research
 

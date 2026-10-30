@@ -146,7 +146,7 @@ I plugin con tag `bonus` e i due plugin dei repo interi non fanno parte di nessu
 |---|---|---|---|
 | [`i-have-adhd`](https://github.com/ayghri/i-have-adhd) | Evita che l'agente seppellisca la risposta: risposte adatte all'ADHD | 1 skill | ~67 |
 | [`academic-pptx-skill`](https://github.com/Gabberflast/academic-pptx-skill) | Presentazioni accademiche (talk, seminari, tesi): titoli d'azione, argomento strutturato, standard di citazione | 1 skill | ~205 |
-| [`education-agent-skills`](https://github.com/GarethManning/education-agent-skills) | 165 skill basate su evidenze per insegnanti, dirigenti scolastici ed EdTech: pedagogia, scienze dell'apprendimento, curricolo, valutazione | 165 skill | ~10.262 |
+| [`education-agent-skills`](https://github.com/GarethManning/education-agent-skills/tree/HEAD/skills) | 165 skill basate su evidenze per insegnanti, dirigenti scolastici ed EdTech: pedagogia, scienze dell'apprendimento, curricolo, valutazione | 165 skill | ~10.262 |
 
 ### Research
 
