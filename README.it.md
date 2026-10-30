@@ -2,7 +2,7 @@
 
 [English](README.md) · **Italiano**
 
-Un **marketplace** per Claude Code e Claude Desktop: un catalogo di plugin. Qui ci sono tutte le skill, i server MCP e gli strumenti che uso, divisi in 7 categorie. Ogni categoria ha un **pack** che installa l'essenziale in un colpo solo. Ogni plugin si installa anche da solo.
+Un **marketplace** per Claude Code e Claude Desktop: un catalogo di plugin. Qui ci sono tutte le skill, i server MCP e gli strumenti che uso, divisi in 8 categorie. Ogni categoria ha un **pack** che installa l'essenziale in un colpo solo. Ogni plugin si installa anche da solo.
 
 Qui non c'è niente di copiato. Ogni voce punta al repo originale e segue l'ultima versione.
 
@@ -17,7 +17,7 @@ Qui non c'è niente di copiato. Ogni voce punta al repo originale e segue l'ulti
 
 **Claude Desktop**: Customize > Plugins > Add marketplace > `giofornari/skills`, poi scegli un pack.
 
-Sfoglia tutto con `/plugin`. I pack sono le prime sette voci.
+Sfoglia tutto con `/plugin`. I pack sono le prime otto voci.
 
 ## Installa: un agente
 
@@ -36,7 +36,7 @@ Poi `/reload-plugins` o riavvia la sessione. I nomi dei plugin sono nelle tabell
 | Percorso | Ruolo |
 |---|---|
 | `.claude-plugin/marketplace.json` | Il catalogo e unica fonte di verità: prima i pack, poi i plugin per categoria |
-| `plugins/` | Solo ciò che è mio: i 7 manifest dei pack, `camoufox` (server MCP), `graphify` (skill di setup) |
+| `plugins/` | Solo ciò che è mio: i 8 manifest dei pack, `camoufox` (server MCP), `graphify` (skill di setup) |
 | `docs/` | Le immagini di questo README |
 
 Le voci sono di quattro tipi:
@@ -61,6 +61,7 @@ Le voci sono di quattro tipi:
 | `5-pack-learning` | 4 plugin | ~1.648 |
 | `6-pack-research` | 4 plugin | ~1.214 |
 | `7-pack-content-creation` | 4 plugin | ~19.030 |
+| `8-pack-marketing-strategy` | 4 plugin | ~5.019 |
 
 I plugin con tag `bonus` e i due plugin dei repo interi non fanno parte di nessun pack.
 
@@ -177,6 +178,17 @@ I plugin con tag `bonus` e i due plugin dei repo interi non fanno parte di nessu
 | [`hyperframes`](https://github.com/heygen-com/hyperframes) | Scrivi HTML, renderizza video: tutte le skill HyperFrames in un solo bundle | 7 skill | ~551 |
 | [`marketing-skills`](https://github.com/coreyhaines31/marketingskills) | Skill di marketing: CRO, copywriting, SEO e altro | 52 skill | ~10.629 |
 
+### Marketing & Strategy
+
+![Marketing & Strategy](docs/it/cat-8-marketing-strategy.png)
+
+| Plugin | Cosa fa | Carica | Token |
+|---|---|---|---|
+| [`seo`](https://github.com/AgriciDaniel/claude-seo) | Suite SEO: 26 skill e 19 sub-agent per audit, SEO tecnica, schema, GEO, backlink, SEO locale ed e-commerce | 26 skill | ~3.123 |
+| [`seo-extensions`](https://github.com/AgriciDaniel/claude-seo/tree/HEAD/extensions) | Skill SEO opzionali per Ahrefs, Bing Webmaster, Firecrawl, Matomo, Profound, SE Ranking e Unlighthouse. Ognuna richiede il proprio account o la propria API key | 7 skill | ~414 |
+| [`marketing-cro`](https://github.com/wondelai/skills) | Framework di conversione e marketing: metodologia CRO, StoryBrand, Scorecard Marketing, Contagious, 1-Page Marketing Plan | 5 skill | ~788 |
+| [`sales-influence`](https://github.com/wondelai/skills) | Framework di vendita e persuasione: psicologia dell'influenza di Cialdini, Predictable Revenue, Made to Stick, $100M Offers | 4 skill | ~694 |
+
 ## Prerequisiti
 
 - `graphify`: serve `uv`. La sua skill installa la CLI con l'installer di Graphify.
@@ -184,6 +196,7 @@ I plugin con tag `bonus` e i due plugin dei repo interi non fanno parte di nessu
 - `agent-reach`: installa la CLI dalla [guida di installazione](https://raw.githubusercontent.com/Panniantong/Agent-Reach/main/docs/install.md). Il pacchetto PyPI con lo stesso nome è un altro progetto.
 - `openmontage`: carica solo le skill. La pipeline completa richiede il progetto clonato (Python 3.10+, FFmpeg).
 - `exa`, `firecrawl`, `tavily`: al primo uso servono una tua API key o un login.
+- `seo`: include un hook che valida lo schema markup dopo ogni modifica a un file. `seo-extensions`: ogni skill richiede il proprio account o la propria API key.
 - `caveman`, `hyperframes`: l'installazione del plugin salta le dipendenze Node, quindi installale a mano quando uno strumento le chiede.
 
 ## Aggiornamenti

@@ -2,7 +2,7 @@
 
 **English** · [Italiano](README.it.md)
 
-A Claude Code and Claude Desktop **marketplace**: a catalog of plugins. This one holds every skill, MCP server and tool I use, sorted into 7 categories. Each category has a **pack** that installs the essentials in one step. Every plugin also installs on its own.
+A Claude Code and Claude Desktop **marketplace**: a catalog of plugins. This one holds every skill, MCP server and tool I use, sorted into 8 categories. Each category has a **pack** that installs the essentials in one step. Every plugin also installs on its own.
 
 Nothing is copied here. Each entry points at its upstream repo and follows its latest version.
 
@@ -17,7 +17,7 @@ Nothing is copied here. Each entry points at its upstream repo and follows its l
 
 **Claude Desktop**: Customize > Plugins > Add marketplace > `giofornari/skills`, then pick a pack.
 
-Browse everything with `/plugin`. The packs are the first seven entries.
+Browse everything with `/plugin`. The packs are the first eight entries.
 
 ## Install: an agent
 
@@ -36,7 +36,7 @@ Then `/reload-plugins` or restart the session. Plugin names are in the tables be
 | Path | Role |
 |---|---|
 | `.claude-plugin/marketplace.json` | The catalog and single source of truth: packs first, then plugins by category |
-| `plugins/` | Only what is mine: the 7 pack manifests, `camoufox` (MCP server), `graphify` (setup skill) |
+| `plugins/` | Only what is mine: the 8 pack manifests, `camoufox` (MCP server), `graphify` (setup skill) |
 | `docs/` | The images in this README |
 
 Entries come in four kinds:
@@ -61,6 +61,7 @@ Entries come in four kinds:
 | `5-pack-learning` | 4 plugins | ~1,648 |
 | `6-pack-research` | 4 plugins | ~1,214 |
 | `7-pack-content-creation` | 4 plugins | ~19,030 |
+| `8-pack-marketing-strategy` | 4 plugins | ~5,019 |
 
 Plugins tagged `bonus` and the two full-repo plugins belong to no pack.
 
@@ -177,6 +178,17 @@ Plugins tagged `bonus` and the two full-repo plugins belong to no pack.
 | [`hyperframes`](https://github.com/heygen-com/hyperframes) | Write HTML, render video: all HyperFrames skills in one bundle | 7 skills | ~551 |
 | [`marketing-skills`](https://github.com/coreyhaines31/marketingskills) | Marketing skills: CRO, copywriting, SEO and more | 52 skills | ~10,629 |
 
+### Marketing & Strategy
+
+![Marketing & Strategy](docs/cat-8-marketing-strategy.png)
+
+| Plugin | What it does | Loads | Tokens |
+|---|---|---|---|
+| [`seo`](https://github.com/AgriciDaniel/claude-seo) | SEO suite: 26 skills and 19 sub-agents for audits, technical SEO, schema, GEO, backlinks, local and e-commerce SEO | 26 skills | ~3,123 |
+| [`seo-extensions`](https://github.com/AgriciDaniel/claude-seo/tree/HEAD/extensions) | Optional SEO data skills for Ahrefs, Bing Webmaster, Firecrawl, Matomo, Profound, SE Ranking and Unlighthouse. Each needs its own account or API key | 7 skills | ~414 |
+| [`marketing-cro`](https://github.com/wondelai/skills) | Conversion and marketing frameworks: CRO methodology, StoryBrand, Scorecard Marketing, Contagious, 1-Page Marketing Plan | 5 skills | ~788 |
+| [`sales-influence`](https://github.com/wondelai/skills) | Sales and persuasion frameworks: Cialdini's influence psychology, Predictable Revenue, Made to Stick, $100M Offers | 4 skills | ~694 |
+
 ## Prerequisites
 
 - `graphify`: needs `uv`. Its skill installs the CLI through Graphify's own installer.
@@ -184,6 +196,7 @@ Plugins tagged `bonus` and the two full-repo plugins belong to no pack.
 - `agent-reach`: install the CLI from [its install guide](https://raw.githubusercontent.com/Panniantong/Agent-Reach/main/docs/install.md). The PyPI package with the same name is a different project.
 - `openmontage`: loads the skills only. The full pipeline needs the project cloned (Python 3.10+, FFmpeg).
 - `exa`, `firecrawl`, `tavily`: need your own API key or login at first use.
+- `seo`: ships a hook that validates schema markup after each file edit. `seo-extensions`: each skill needs its own account or API key.
 - `caveman`, `hyperframes`: plugin installs skip their Node dependencies, so install those by hand when a tool asks.
 
 ## Updates

@@ -120,6 +120,21 @@
       ]
     },
     {
+      "name": "8-pack-marketing-strategy",
+      "source": "./plugins/8-pack-marketing-strategy",
+      "description": "Marketing & Strategy: seo, seo-extensions, marketing-cro, sales-influence",
+      "category": "Marketing & Strategy",
+      "tags": [
+        "pack"
+      ],
+      "dependencies": [
+        "seo",
+        "seo-extensions",
+        "marketing-cro",
+        "sales-influence"
+      ]
+    },
+    {
       "name": "superpowers",
       "source": {
         "source": "github",
@@ -680,6 +695,68 @@
       },
       "description": "Marketing skills: CRO, copywriting, SEO and more.",
       "category": "Content Creation"
+    },
+    {
+      "name": "seo",
+      "source": {
+        "source": "github",
+        "repo": "AgriciDaniel/claude-seo"
+      },
+      "description": "SEO suite: 26 skills and 19 sub-agents for audits, technical SEO, schema, GEO, backlinks, local and e-commerce SEO.",
+      "category": "Marketing & Strategy"
+    },
+    {
+      "name": "seo-extensions",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/AgriciDaniel/claude-seo.git",
+        "path": "extensions"
+      },
+      "description": "Optional SEO data skills for Ahrefs, Bing Webmaster, Firecrawl, Matomo, Profound, SE Ranking and Unlighthouse. Each needs its own account or API key.",
+      "category": "Marketing & Strategy",
+      "strict": false,
+      "skills": [
+        "./ahrefs/skills/seo-ahrefs",
+        "./bing-webmaster/skills/seo-bing",
+        "./firecrawl/skills/seo-firecrawl",
+        "./matomo/skills/seo-matomo",
+        "./profound/skills/seo-profound",
+        "./seranking/skills/seo-seranking",
+        "./unlighthouse/skills/seo-unlighthouse"
+      ]
+    },
+    {
+      "name": "marketing-cro",
+      "source": {
+        "source": "github",
+        "repo": "wondelai/skills"
+      },
+      "description": "Conversion and marketing frameworks: CRO methodology, StoryBrand, Scorecard Marketing, Contagious, 1-Page Marketing Plan.",
+      "category": "Marketing & Strategy",
+      "strict": false,
+      "skills": [
+        "./cro-methodology",
+        "./storybrand-messaging",
+        "./scorecard-marketing",
+        "./contagious",
+        "./one-page-marketing"
+      ]
+    },
+    {
+      "name": "sales-influence",
+      "source": {
+        "source": "github",
+        "repo": "wondelai/skills"
+      },
+      "description": "Sales and persuasion frameworks: Cialdini's influence psychology, Predictable Revenue, Made to Stick, $100M Offers.",
+      "category": "Marketing & Strategy",
+      "strict": false,
+      "skills": [
+        "./influence-psychology",
+        "./predictable-revenue",
+        "./made-to-stick",
+        "./hundred-million-offers"
+      ]
     }
   ]
 }
