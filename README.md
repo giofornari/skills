@@ -1,5 +1,7 @@
 ![skills](docs/banner.png)
 
+**English** · [Italiano](README.it.md)
+
 A Claude Code and Claude Desktop **marketplace**: a catalog of plugins. This one holds every skill, MCP server and tool I use, sorted into 7 categories. Each category has a **pack** that installs the essentials in one step. Every plugin also installs on its own.
 
 Nothing is copied here. Each entry points at its upstream repo and follows its latest version.
@@ -54,7 +56,7 @@ Entries come in four kinds:
 |---|---|---|
 | `1-pack-fundamentals` | 12 plugins | ~1,538 |
 | `2-pack-context-memory` | 4 plugins | ~3,696 |
-| `3-pack-design` | 4 plugins | ~2,526 |
+| `3-pack-design` | 4 plugins | ~3,166 |
 | `4-pack-design-advanced` | 4 plugins | ~1,481 |
 | `5-pack-learning` | 4 plugins | ~1,648 |
 | `6-pack-research` | 4 plugins | ~1,214 |
@@ -114,12 +116,6 @@ Plugins tagged `bonus` and the two full-repo plugins belong to no pack.
 | [`impeccable`](https://github.com/pbakaus/impeccable/tree/HEAD/plugin) | Design vocabulary for coding agents: steer with polish and boldness | 1 skill | ~312 |
 | [`taste-skill`](https://github.com/Leonxlnx/taste-skill) | Art direction for websites, product pages and dashboards (taste-skill v2) | 1 skill | ~243 |
 | [`emil-kowalski-skills`](https://github.com/emilkowalski/skills) | Emil Kowalski's skills for designers and engineers: animation, UI polish, design engineering | 16 skills | ~1,902 |
-| [`hallmark`](https://github.com/Nutlope/hallmark/tree/HEAD/skills) | Anti-AI-slop design skill | 1 skill | ~69 |
-
-**Also available** (not in the pack, install one by one):
-
-| Plugin | What it does | Loads | Tokens |
-|---|---|---|---|
 | [`ui-ux-pro-max`](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | Design intelligence: searchable styles, palettes, typography and UX guidelines | 7 skills | ~709 |
 
 ### Design Advanced
@@ -149,6 +145,8 @@ Plugins tagged `bonus` and the two full-repo plugins belong to no pack.
 | Plugin | What it does | Loads | Tokens |
 |---|---|---|---|
 | [`i-have-adhd`](https://github.com/ayghri/i-have-adhd) | Stops the agent burying the answer: ADHD-friendly responses | 1 skill | ~67 |
+| [`academic-pptx-skill`](https://github.com/Gabberflast/academic-pptx-skill) | Academic presentations (talks, seminars, thesis defenses): action titles, structured argument, citation standards | 1 skill | ~205 |
+| [`education-agent-skills`](https://github.com/GarethManning/education-agent-skills) | 165 evidence-grounded skills for teachers, school leaders and EdTech: pedagogy, learning science, curriculum, assessment | 165 skills | ~10,262 |
 
 ### Research
 
@@ -210,4 +208,4 @@ No source is pinned and no manifest sets a `version`, so every upstream release 
 
 ## Licenses
 
-Each plugin keeps its upstream license and authors. `openmontage` is AGPL-3.0 and `andrej-karpathy-skills` declares none. The original content here (manifests, `camoufox` server, `graphify` skill) is MIT.
+Each plugin keeps its upstream license and authors. `openmontage` is AGPL-3.0, `education-agent-skills` is CC BY-SA 4.0 and `andrej-karpathy-skills` declares none. The original content here (manifests, `camoufox` server, `graphify` skill) is MIT.

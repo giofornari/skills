@@ -47,7 +47,7 @@
     {
       "name": "3-pack-design",
       "source": "./plugins/3-pack-design",
-      "description": "Design: impeccable, taste-skill, emil-kowalski-skills, hallmark",
+      "description": "Design: impeccable, taste-skill, emil-kowalski-skills, ui-ux-pro-max",
       "category": "Design",
       "tags": [
         "pack"
@@ -56,7 +56,7 @@
         "impeccable",
         "taste-skill",
         "emil-kowalski-skills",
-        "hallmark"
+        "ui-ux-pro-max"
       ]
     },
     {
@@ -414,20 +414,6 @@
       "category": "Design"
     },
     {
-      "name": "hallmark",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/Nutlope/hallmark.git",
-        "path": "skills"
-      },
-      "description": "Anti-AI-slop design skill.",
-      "strict": false,
-      "skills": [
-        "./hallmark"
-      ],
-      "category": "Design"
-    },
-    {
       "name": "ui-ux-pro-max",
       "source": {
         "source": "github",
@@ -435,9 +421,6 @@
       },
       "description": "Design intelligence: searchable styles, palettes, typography and UX guidelines.",
       "strict": false,
-      "tags": [
-        "bonus"
-      ],
       "category": "Design"
     },
     {
@@ -476,6 +459,20 @@
       "skills": [
         "./"
       ]
+    },
+    {
+      "name": "hallmark",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/Nutlope/hallmark.git",
+        "path": "skills"
+      },
+      "description": "Anti-AI-slop design skill.",
+      "strict": false,
+      "skills": [
+        "./hallmark"
+      ],
+      "category": "Design Advanced"
     },
     {
       "name": "understand-anything",
@@ -526,6 +523,34 @@
         "repo": "ayghri/i-have-adhd"
       },
       "description": "Stops the agent burying the answer: ADHD-friendly responses.",
+      "tags": [
+        "bonus"
+      ],
+      "category": "Learning"
+    },
+    {
+      "name": "academic-pptx-skill",
+      "source": {
+        "source": "github",
+        "repo": "Gabberflast/academic-pptx-skill"
+      },
+      "description": "Academic presentations (talks, seminars, thesis defenses): action titles, structured argument, citation standards.",
+      "strict": false,
+      "skills": [
+        "./"
+      ],
+      "tags": [
+        "bonus"
+      ],
+      "category": "Learning"
+    },
+    {
+      "name": "education-agent-skills",
+      "source": {
+        "source": "github",
+        "repo": "GarethManning/education-agent-skills"
+      },
+      "description": "165 evidence-grounded skills for teachers, school leaders and EdTech: pedagogy, learning science, curriculum, assessment.",
       "tags": [
         "bonus"
       ],
