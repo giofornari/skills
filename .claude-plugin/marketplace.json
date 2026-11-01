@@ -132,7 +132,8 @@
         "seo-extensions",
         "marketing-cro",
         "sales-influence",
-        "marketing-skills"
+        "marketing-skills",
+        "sales-skills"
       ]
     },
     {
@@ -767,6 +768,19 @@
       },
       "description": "Marketing skills: CRO, copywriting, SEO and more.",
       "category": "Marketing & Strategy"
+    },
+    {
+      "name": "sales-skills",
+      "source": {
+        "source": "github",
+        "repo": "louisblythe/Sales-Skills"
+      },
+      "description": "122 sales skills for SDRs, AEs and revenue leaders: prospecting, discovery, objection handling, negotiation, pipeline management, AI SDR bots.",
+      "category": "Marketing & Strategy",
+      "strict": false,
+      "skills": [
+        "./skills"
+      ]
     }
   ]
 }

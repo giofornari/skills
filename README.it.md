@@ -61,7 +61,7 @@ Le voci sono di quattro tipi:
 | `5-pack-learning` | 4 plugin | ~1.648 |
 | `6-pack-research` | 4 plugin | ~1.214 |
 | `7-pack-content-creation` | 4 plugin | ~8.578 |
-| `8-pack-marketing-strategy` | 5 plugin | ~15.648 |
+| `8-pack-marketing-strategy` | 6 plugin | ~25.686 |
 
 I plugin con tag `bonus` e i due plugin dei repo interi non fanno parte di nessun pack.
 
@@ -189,6 +189,7 @@ I plugin con tag `bonus` e i due plugin dei repo interi non fanno parte di nessu
 | [`marketing-cro`](https://github.com/wondelai/skills) | Framework di conversione e marketing: metodologia CRO, StoryBrand, Scorecard Marketing, Contagious, 1-Page Marketing Plan | 5 skill | ~788 |
 | [`sales-influence`](https://github.com/wondelai/skills) | Framework di vendita e persuasione: psicologia dell'influenza di Cialdini, Predictable Revenue, Made to Stick, $100M Offers | 4 skill | ~694 |
 | [`marketing-skills`](https://github.com/coreyhaines31/marketingskills) | Skill di marketing: CRO, copywriting, SEO e altro | 52 skill | ~10.629 |
+| [`sales-skills`](https://github.com/louisblythe/Sales-Skills) | Skill di vendita per SDR, AE e responsabili commerciali: prospecting, discovery, gestione delle obiezioni, negoziazione, pipeline, bot SDR | 122 skill | ~10.038 |
 
 ## Prerequisiti
 

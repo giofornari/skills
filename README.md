@@ -61,7 +61,7 @@ Entries come in four kinds:
 | `5-pack-learning` | 4 plugins | ~1,648 |
 | `6-pack-research` | 4 plugins | ~1,214 |
 | `7-pack-content-creation` | 4 plugins | ~8,578 |
-| `8-pack-marketing-strategy` | 5 plugins | ~15,648 |
+| `8-pack-marketing-strategy` | 6 plugins | ~25,686 |
 
 Plugins tagged `bonus` and the two full-repo plugins belong to no pack.
 
@@ -189,6 +189,7 @@ Plugins tagged `bonus` and the two full-repo plugins belong to no pack.
 | [`marketing-cro`](https://github.com/wondelai/skills) | Conversion and marketing frameworks: CRO methodology, StoryBrand, Scorecard Marketing, Contagious, 1-Page Marketing Plan | 5 skills | ~788 |
 | [`sales-influence`](https://github.com/wondelai/skills) | Sales and persuasion frameworks: Cialdini's influence psychology, Predictable Revenue, Made to Stick, $100M Offers | 4 skills | ~694 |
 | [`marketing-skills`](https://github.com/coreyhaines31/marketingskills) | Marketing skills: CRO, copywriting, SEO and more | 52 skills | ~10,629 |
+| [`sales-skills`](https://github.com/louisblythe/Sales-Skills) | Sales skills for SDRs, AEs and revenue leaders: prospecting, discovery, objection handling, negotiation, pipeline, AI SDR bots | 122 skills | ~10,038 |
 
 ## Prerequisites
 
