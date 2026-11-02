@@ -1,0 +1,71 @@
+# Fundamentals — donor analysis
+Read: 2026-11-02; upstream commits: addyosmani/agent-skills=301b02b, mattpocock/skills=4ae2317, obra/superpowers=2ce8aa1, multica-ai/andrej-karpathy-skills=2c60614, blader/humanizer=0ef9fe5, DietrichGebert/ponytail=96608e0
+
+Figures: `claude --plugin-dir <dir> plugin details <name>`, rounded by the tool. On-invoke counts SKILL.md only, not sibling reference files. Hook-injected context is not counted in always-on.
+
+| plugin | skills | licence | always-on | on-invoke | class |
+|---|---|---|---|---|---|
+| superpowers | brainstorming, diagnosing-superpowers, dispatching-parallel-agents, executing-plans, finishing-a-development-branch, receiving-code-review, requesting-code-review, subagent-driven-development, systematic-debugging, test-driven-development, using-git-worktrees, using-superpowers, verification-before-completion, writing-plans, writing-skills | MIT | 848 | 49700 | indivisible |
+| andrej-karpathy-skills | karpathy-guidelines | none | 105 | 850 | fusable |
+| humanizer | humanizer | MIT | 144 | 10700 | fusable |
+| ponytail | ponytail, ponytail-audit, ponytail-debt, ponytail-gain, ponytail-help, ponytail-review | MIT | 641 | 6880 | indivisible |
+| grill-me | grill-me | MIT | 34 | 20 | fusable |
+| grill-with-docs | grill-with-docs | MIT | 60 | 30 | fusable |
+| grilling | grilling | MIT | 70 | 600 | fusable |
+| teach | teach | MIT | 32 | 3000 | fusable |
+| improve-codebase-architecture | improve-codebase-architecture | MIT | 68 | 2100 | fusable |
+| triage | triage | MIT | 57 | 2300 | fusable |
+| retro | retro | MIT | 28 | 1400 | fusable |
+| writing-for-agents | writing-for-agents | MIT | 64 | 3400 | fusable |
+| interview-me | interview-me | MIT | 173 | 4900 | fusable |
+| idea-refine | idea-refine | MIT | 124 | 3300 | fusable |
+| debugging-and-error-recovery | debugging-and-error-recovery | MIT | 131 | 3600 | fusable |
+| shipping-and-launch | shipping-and-launch | MIT | 108 | 4200 | fusable |
+| agent-skills | api-and-interface-design, browser-testing-with-devtools, ci-cd-and-automation, code-review-and-quality, code-simplification, constraint-driven-development, context-engineering, debugging-and-error-recovery, deprecation-and-migration, documentation-and-adrs, doubt-driven-development, frontend-ui-engineering, git-workflow-and-versioning, idea-refine, incremental-implementation, interview-me, observability-and-instrumentation, performance-optimization, planning-and-task-breakdown, security-and-hardening, shipping-and-launch, source-driven-development, spec-driven-development, test-driven-development, using-agent-skills | MIT | 3779 | 118400 | indivisible |
+| mattpocock-skills | ask-matt, code-review, codebase-design, diagnosing-bugs, domain-modeling, grill-me, grill-with-docs, grilling, handoff, implement, implement-spec, improve-codebase-architecture, pr, prototype, research, retro, setup-matt-pocock-skills, tdd, teach, to-questionnaire, to-spec, to-tickets, triage, wait-what, wayfinder, wizard, writing-for-agents | MIT | 1651 | 42110 | fusable |
+
+Class `fusable` = Markdown-only skills, no bundled runtime, scripts, hooks, agents or MCP. `agent-skills` is indivisible as a package (router meta-skill, 4 agents, 9 commands, unwired hook scripts); its single skills are plain Markdown and can be fused one by one. `mattpocock-skills` is fusable by class, but its skills cross-call each other (see Notes).
+
+Per-skill on-invoke, the skills only reachable through a whole-repo plugin:
+- agent-skills: using-agent-skills 3400, spec-driven-development 4500, planning-and-task-breakdown 3600, incremental-implementation 3200, test-driven-development 5800, source-driven-development 3500, constraint-driven-development 7600, doubt-driven-development 5800, context-engineering 5300, code-review-and-quality 7400, code-simplification 4700, api-and-interface-design 5200, frontend-ui-engineering 4100, browser-testing-with-devtools 4900, security-and-hardening 6000, performance-optimization 5800, observability-and-instrumentation 4800, ci-cd-and-automation 3900, git-workflow-and-versioning 4800, documentation-and-adrs 3800, deprecation-and-migration 4400. Standalone: interview-me 4900, idea-refine 3300, debugging-and-error-recovery 3600, shipping-and-launch 4200.
+- mattpocock-skills: ask-matt 4200, code-review 2100, codebase-design 2000, diagnosing-bugs 2900, domain-modeling 1000, handoff 250, implement 170, implement-spec 920, pr 1300, prototype 920, research 190, setup-matt-pocock-skills 2500, tdd 1200, to-questionnaire 930, to-spec 960, to-tickets 1900, wait-what 90, wayfinder 4100, wizard 1300.
+- superpowers: brainstorming 4800, diagnosing-superpowers 2400, dispatching-parallel-agents 2100, executing-plans 6400, finishing-a-development-branch 2700, receiving-code-review 2100, requesting-code-review 1000, subagent-driven-development 7000, systematic-debugging 3400, test-driven-development 3400, using-git-worktrees 2400, using-superpowers 1100, verification-before-completion 1200, writing-plans 3700, writing-skills 6000.
+- ponytail: ponytail 1100, ponytail-audit 1800, ponytail-debt 540, ponytail-gain 640, ponytail-help 1100, ponytail-review 1700.
+
+## Baseline
+Always-on of the 12 current `1-pack-fundamentals` dependencies: superpowers 848 + andrej-karpathy-skills 105 + humanizer 144 + ponytail 641 + grill-me 34 + grill-with-docs 60 + grilling 70 + teach 32 + improve-codebase-architecture 68 + triage 57 + retro 28 + writing-for-agents 64 = **2151** tokens.
+The tool does not count hook injection: superpowers' SessionStart hook adds about 1100 (true always-on about 3250 for the pack), ponytail's three hooks add an unmeasured amount.
+
+## Groups
+One line per job. Verdict is my proposal: `fuse`, `keep best (<name>)` or `drop`. "Licences" says whether every donor named in the verdict is fusable (MIT/Apache-2.0/BSD/CC0, licence file present).
+- interview/grill: interview-me (addy), grilling, grill-me, grill-with-docs, to-questionnaire, wait-what (matt); superpowers:brainstorming overlaps but stays in its pack — fuse interview-me + grilling into one skill; grill-me and grill-with-docs are 20/30-token stubs, drop them; to-questionnaire and wait-what drop — licences: all MIT, yes.
+- ideation/planning: idea-refine, spec-driven-development, planning-and-task-breakdown (addy), to-spec, to-tickets, wayfinder, implement, implement-spec, prototype, research (matt); superpowers:writing-plans overlaps but stays — fuse idea-refine + spec-driven-development + planning-and-task-breakdown + to-spec + to-tickets (refine → spec → tickets); wayfinder, implement, implement-spec, prototype, research drop — licences: all MIT, yes.
+- debugging: debugging-and-error-recovery, browser-testing-with-devtools (addy), diagnosing-bugs (matt); superpowers:systematic-debugging overlaps but stays — fuse debugging-and-error-recovery + diagnosing-bugs; browser-testing-with-devtools drop (needs the external chrome-devtools MCP) — licences: all MIT, yes.
+- review: code-review-and-quality, constraint-driven-development, doubt-driven-development (addy), code-review (matt), pr (matt), karpathy-guidelines; superpowers requesting/receiving-code-review and ponytail-review overlap but stay — fuse code-review-and-quality + code-review + doubt-driven-development; constraint-driven-development drop (7600, niche); pr and karpathy-guidelines are not fusable (pr is derived from a `show-me` skill of unchecked licence, karpathy has no licence file) — licences: yes for the three fused, no for pr and karpathy.
+- architecture/domain: improve-codebase-architecture, codebase-design, domain-modeling (matt), api-and-interface-design, deprecation-and-migration (addy) — fuse improve-codebase-architecture + codebase-design + domain-modeling into one self-contained skill (the standalone plugin calls the other two, which are not extracted); api-and-interface-design and deprecation-and-migration drop — licences: all MIT, yes.
+- retro/triage: retro, triage (matt), diagnosing-superpowers (stays in superpowers) — keep best (retro): fuse retro with writing-for-agents (retro calls it); triage drop from the essential (needs `setup-matt-pocock-skills` tracker config, calls grilling and domain-modeling) and stays a pointer — licences: all MIT, yes.
+- writing: writing-for-agents (matt), humanizer, documentation-and-adrs, git-workflow-and-versioning (addy) — fuse writing-for-agents into the retro skill (above); humanizer is a different job (prose for humans, 10700 on-invoke): keep as its own plugin in the pack, not fused; documentation-and-adrs and git-workflow-and-versioning drop — licences: all MIT, yes.
+- shipping/ops: shipping-and-launch, ci-cd-and-automation, observability-and-instrumentation (addy) — keep best (shipping-and-launch); the others drop — licences: MIT, yes.
+- coding discipline: karpathy-guidelines, ponytail (+ ponytail-audit/debt/gain/help), code-simplification, test-driven-development (addy), tdd (matt); superpowers:test-driven-development overlaps — karpathy and ponytail stay as plugins in the pack; code-simplification, addy TDD and matt tdd drop (superpowers covers TDD) — licences: karpathy no, others MIT.
+- learning: teach (matt) — owner decision, see question (b) — licences: MIT, yes.
+- other: ask-matt, handoff, wizard, setup-matt-pocock-skills (matt), using-agent-skills, context-engineering, source-driven-development, incremental-implementation, security-and-hardening, performance-optimization, frontend-ui-engineering (addy) — drop: routers, config, or outside the pack's job — licences: MIT, yes.
+
+## Questions for the owner
+- (a) claude-mem is `session-memory` in Context & Memory, not in Fundamentals. You called it an indivisible Fundamentals plugin: does it move to the Fundamentals pack, or stay in Context & Memory?
+- (b) `teach` is in the Fundamentals pack in the repo but listed under Learning in the spec §3. Moves it to Learning, or stays?
+- (c) The six non-pack Fundamentals plugins (interview-me, idea-refine, debugging-and-error-recovery, shipping-and-launch, agent-skills, mattpocock-skills) are donors too in the verdicts above. Right? And do any of them join the new pack as plugins (as-is)?
+- (d) andrej-karpathy-skills declares MIT in plugin.json, the SKILL.md frontmatter and the README, but ships no LICENSE file. Pointer (rule) or trust the declared MIT and fuse?
+
+## Notes
+- Hidden always-on: superpowers' SessionStart hook injects the full `using-superpowers` skill (about 1100 tokens) at every start/clear/compact; the tool labels it "harness-only, no model context cost". ponytail's SessionStart, SubagentStart and UserPromptSubmit hooks also inject its ruleset. Neither is in the figures above. A slimmer pack that keeps both gains nothing there.
+- superpowers 7.0.1 upstream, 7.0.0 in the local cache (measured on the upstream clone). Its skills cross-reference each other by name, so it stays whole.
+- ponytail also carries a mod UI, a `userConfig` CSV ledger at `~/.config/ponytail/band/<project>.csv` and an optional webhook that sends nothing unless the user sets one.
+- agent-skills: the four standalone addy plugins are fusable MIT donors that are not in the current pack. The skills measure slightly different standalone vs inside the whole repo (interview-me 4900 vs 5200, shipping-and-launch 4200 vs 3900): tool rounding, not content. The router `using-agent-skills` is meaningless without the rest. `idea-refine` ships three reference .md files and a helper script (not run).
+- mattpocock standalone plugins are not self-contained: grill-me and grill-with-docs are stubs calling `grilling` (and `domain-modeling`); improve-codebase-architecture needs `codebase-design`, `grilling`, `domain-modeling`; triage needs `grilling`, `domain-modeling` and the `setup-matt-pocock-skills` config; retro needs `writing-for-agents`. `domain-modeling` and `codebase-design` are not extracted, only reachable through the whole `mattpocock-skills` repo. A fused skill replaces the stubs and the missing links.
+- The grill group's real cost is `grilling` at 600: `grill-me` (34 always-on / 20 on-invoke) and `grill-with-docs` (60 / 30) are near-empty stubs.
+- Whole-repo `mattpocock-skills` always-on is 1651 against 413 for the 8 extracted plugins: the extraction already saves about 1240 per session.
+- Licence: `pr` carries `metadata.credits` to Dex Horthy / humanlayer `show-me`; the upstream licence is unchecked, so treat `pr` as derived work and do not fuse it. Copyright lines for `NOTICE`: Matt Pocock (2026), Addy Osmani (2025), Siqi Chen (2025, humanizer), Jesse Vincent (2025, superpowers), DietrichGebert (2026, ponytail).
+- On-invoke excludes sibling reference files read on demand: teach has 4 `*-FORMAT.md` files (SKILL.md 9.7 of 18 KB), triage `AGENT-BRIEF.md` + `OUT-OF-SCOPE.md` (6.6 of 19 KB), improve-codebase-architecture `HTML-REPORT.md` (6 of 12.7 KB), writing-for-agents `SKILL-MECHANICS.md` (10.9 of 13.5 KB). The real cost of a fully exercised skill is higher than the table.
+- Many matt skills have `disable-model-invocation: true`; the tool still counts their description toward always-on.
+- Whole-repo `mattpocock-skills` lists 27 skills; the clone holds 12 more unexposed SKILL.md directories (not measured).
+- Measurement caveat: always-on of the pack in `## Result` (Task 5) is the sum of plugin-level figures, so it is comparable to the Baseline above, not to a hook-inclusive total.
