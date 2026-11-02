@@ -35,6 +35,7 @@ Per-skill on-invoke, the skills only reachable through a whole-repo plugin:
 ## Baseline
 Always-on of the 12 current `1-pack-fundamentals` dependencies: superpowers 848 + andrej-karpathy-skills 105 + humanizer 144 + ponytail 641 + grill-me 34 + grill-with-docs 60 + grilling 70 + teach 32 + improve-codebase-architecture 68 + triage 57 + retro 28 + writing-for-agents 64 = **2151** tokens.
 The tool does not count hook injection: superpowers' SessionStart hook adds about 1100 (true always-on about 3250 for the pack), ponytail's three hooks add an unmeasured amount.
+Adjusted baseline (Task 5 comparison): the owner moved `session-memory` (always-on 2873) into this pack, so the cost relocates from Context & Memory rather than appearing. Adjusted baseline = 2151 + 2873 = **5024**. Task 5 records the new pack against both numbers.
 
 ## Groups
 One line per job. Verdict is my proposal: `fuse`, `keep best (<name>)` or `drop`. "Licences" says whether every donor named in the verdict is fusable (MIT/Apache-2.0/BSD/CC0, licence file present).
@@ -69,3 +70,41 @@ One line per job. Verdict is my proposal: `fuse`, `keep best (<name>)` or `drop`
 - Many matt skills have `disable-model-invocation: true`; the tool still counts their description toward always-on.
 - Whole-repo `mattpocock-skills` lists 27 skills; the clone holds 12 more unexposed SKILL.md directories (not measured).
 - Measurement caveat: always-on of the pack in `## Result` (Task 5) is the sum of plugin-level figures, so it is comparable to the Baseline above, not to a hook-inclusive total.
+
+## Donors added at the gate
+Owner asked for a discipline skill and a parallelisation skill that draw on wondelai. All MIT with a LICENSE file; on-invoke measured with `claude --plugin-dir <skill dir> plugin details <name>` on the local cache copy (wondelai/skills 1.8.0).
+
+| plugin | skills | licence | always-on | on-invoke | class |
+|---|---|---|---|---|---|
+| wondelai clean-code | clean-code | MIT | 208 | 5100 | fusable |
+| wondelai pragmatic-programmer | pragmatic-programmer | MIT | 238 | 5500 | fusable |
+| wondelai software-design-philosophy | software-design-philosophy | MIT | 257 | 5100 | fusable |
+| wondelai high-output-management | high-output-management | MIT | 281 | 6600 | fusable |
+| wondelai team-topologies | team-topologies | MIT | 260 | 6000 | fusable |
+
+- wondelai/skills: Copyright (c) 2025 Wondel.ai sp. z o.o. The skills summarise published books (Ousterhout, Hunt & Thomas, Martin, Grove, Skelton & Pais); a fused skill takes the ideas in fresh wording, not the text.
+- addy `code-simplification` (MIT, 4700) and superpowers `dispatching-parallel-agents` (MIT, 2100) and `subagent-driven-development` (MIT, 7000) are also donors; their plugins stay where they are.
+- `session-memory` (thedotmack/claude-mem 15.8.3, plugin.json says Apache-2.0): 30 skills, 9 hooks, 1 MCP server, **always-on 2873**. Measured on the installed cache copy. Stays whole, not a donor.
+- `codegraph` is `@colbymchenry/codegraph` 0.9.5 (npm, MIT), a CLI with `serve --mcp`; it ships no Claude Code plugin manifest. A wrapper plugin (MCP only) measures ~0 always-on, like `plugins/camoufox`.
+
+## Decisions
+Owner decisions 2026-11-02. The proposals above stand except as corrected below.
+- Owner: retro does not matter. `retro` and `writing-for-agents` are dropped, not fused.
+- Owner: the coding-discipline group becomes one skill, fusing karpathy-guidelines with our other discipline skills, drawing on wondelai.
+- Owner: a new skill explains whether, when and how to launch subagents, teammates or full agents (parallelisation), drawing heavily on wondelai.
+- Owner: claude-mem stays its own plugin (`session-memory`), in the Fundamentals pack with ponytail and codegraph.
+- Fused skills (one `SKILL.md` each, name never equals a donor skill):
+
+sharpen-intent: interview-me, grilling
+idea-to-tickets: idea-refine, spec-driven-development, planning-and-task-breakdown, to-spec, to-tickets
+root-cause-debug: debugging-and-error-recovery, diagnosing-bugs
+review-change: code-review-and-quality, code-review, doubt-driven-development
+deepen-architecture: improve-codebase-architecture, codebase-design, domain-modeling, software-design-philosophy
+discipline: karpathy-guidelines, code-simplification, clean-code, pragmatic-programmer
+orchestrate-agents: dispatching-parallel-agents, subagent-driven-development, high-output-management, team-topologies
+launch-checklist: shipping-and-launch
+
+pack: fundamentals, superpowers, ponytail, session-memory, codegraph, humanizer, teach
+
+- Pack: superpowers, ponytail and session-memory stay whole (indivisible). humanizer stays a plugin (a different job). teach stays for the pilot; the Learning plan moves it. codegraph is a new local wrapper plugin (Task 5).
+- Out of the pack, still in `plugins[]`: grill-me, grill-with-docs, grilling, improve-codebase-architecture, retro, writing-for-agents, triage, andrej-karpathy-skills. The addy and mattpocock-skills plugins stay as plain donors, not in the pack.
