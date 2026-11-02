@@ -116,7 +116,7 @@ Measured 2026-11-02 with `claude --plugin-dir plugins/fundamentals plugin detail
 | fused skill | always-on | on-invoke | donors' on-invoke sum | within bound |
 |---|---|---|---|---|
 | interview | 50 | 3200 | 5500 (interview-me 4900 + grilling 600) | yes |
-| idea-to-tickets | 40 | 2500 | 14260 (idea-refine 3300, spec-driven-development 4500, planning-and-task-breakdown 3600, to-spec 960, to-tickets 1900) | yes |
+| idea-to-tickets | 40 | 5300 | 14260 (idea-refine 3300, spec-driven-development 4500, planning-and-task-breakdown 3600, to-spec 960, to-tickets 1900) | yes |
 | root-cause-debug | 40 | 2200 | 6500 (debugging-and-error-recovery 3600 + diagnosing-bugs 2900) | yes |
 | review-change | 40 | 2900 | 15300 (code-review-and-quality 7400, doubt-driven-development 5800, code-review 2100) | yes |
 | deepen-architecture | 40 | 2600 | 10200 (improve-codebase-architecture 2100, codebase-design 2000, domain-modeling 1000, software-design-philosophy 5100) | yes |
