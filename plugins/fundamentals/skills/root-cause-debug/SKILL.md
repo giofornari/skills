@@ -1,6 +1,6 @@
 ---
 name: root-cause-debug
-description: "Find and fix the root cause of a failing test, broken build, runtime error or slow path, loop first. Not for: review-change."
+description: "Find the root cause of a bug or failing test. Not for: review-change."
 ---
 > Source: addyosmani/agent-skills (MIT), read 2026-11-02; mattpocock/skills (MIT), read 2026-11-02
 

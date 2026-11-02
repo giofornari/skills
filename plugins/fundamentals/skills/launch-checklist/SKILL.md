@@ -1,6 +1,6 @@
 ---
 name: launch-checklist
-description: "Pre-launch checks, flag-gated staged rollout, monitoring and a rollback plan before a production deploy. Not for: review-change."
+description: "Pre-deploy checks, staged rollout, rollback plan. Not for: review-change."
 ---
 > Source: addyosmani/agent-skills (MIT), read 2026-11-02
 

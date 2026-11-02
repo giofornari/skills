@@ -1,6 +1,6 @@
 ---
 name: sharpen-intent
-description: "Interview or grill the user until intent is clear, before any plan or code. Not for: idea-to-tickets."
+description: "Interview or grill the user until intent is clear. Not for: idea-to-tickets."
 ---
 > Source: addyosmani/agent-skills (MIT), read 2026-11-02; mattpocock/skills (MIT), read 2026-11-02
 

@@ -1,6 +1,6 @@
 ---
 name: deepen-architecture
-description: "Find shallow modules, propose deepening refactors and keep the domain glossary and ADRs current. Not for: review-change."
+description: "Find shallow modules and propose deeper ones. Not for: review-change."
 ---
 > Source: mattpocock/skills (MIT), read 2026-11-02; wondelai/skills (MIT), read 2026-11-02
 

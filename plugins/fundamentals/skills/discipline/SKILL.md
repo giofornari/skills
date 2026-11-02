@@ -1,6 +1,6 @@
 ---
 name: discipline
-description: "Coding discipline: think first, keep it simple, change only what was asked, verify, simplify safely. Not for: review-change."
+description: "Think first, keep it simple, change only what is asked. Not for: review-change."
 ---
 > Source: multica-ai/andrej-karpathy-skills (MIT), read 2026-11-02; addyosmani/agent-skills (MIT), read 2026-11-02; wondelai/skills (MIT), read 2026-11-02
 
@@ -10,7 +10,7 @@ Habits that stop the usual agent mistakes: silent assumptions, overbuilt code, d
 
 ## 1. Think before coding
 
-- State your assumptions. If something is unclear, stop, name what confuses you, ask.
+- State your assumptions. Anything unclear: pause, say what is confusing, and ask before going on.
 - Several readings of the request: present them, do not pick one silently.
 - A simpler way exists, or the request looks wrong: say so and push back.
 - Surface the trade-off before you commit to a design.
@@ -18,27 +18,22 @@ Habits that stop the usual agent mistakes: silent assumptions, overbuilt code, d
 ## 2. Simplicity first
 
 - The least code that solves the stated problem. Nothing speculative: no extra features, no abstraction for one use, no flexibility or configuration nobody asked for, no handling of impossible cases.
-- Write 200 lines where 50 would do? Rewrite. Test: would a senior engineer call it overcomplicated?
+- If the same result fits in a quarter of the code, rewrite it. Ask whether an experienced reviewer would call it overbuilt.
 - DRY means one authoritative home for each piece of **knowledge**, not text that merely looks alike: two identical blocks serving different business rules are not duplication. Do not generalise before the third use.
 - Keep components orthogonal: if the requirement behind a function changes drastically, one module should be affected. Avoid global state; inject collaborators (a `Notifier`, not a `SlackClient`).
 
-## 3. Surgical changes
+## 3. Minimal footprint
 
-- Touch only what the request needs; match the existing style even if you would do it differently; do not "improve" adjacent code, comments or formatting; do not refactor what is not broken.
-- Clean up **your own** orphans (imports, variables, functions your change made unused). Unrelated dead code: mention it, do not delete it.
+- Edit only what the request requires; follow the existing style even where you would choose another; leave neighbouring code, comments and formatting alone; do not refactor what works.
+- Clean up **your own** orphans (imports, variables, functions your change made unused). Dead code you did not create: report it and leave it.
 - Every changed line must trace back to the request. Refactoring and feature work go in separate changes.
 - Broken windows: do not add a hack that "we'll fix later". If a fix is out of scope, board it up (a TODO tied to a ticket, a stub, a flag) and say so.
 
 ## 4. Goal-driven execution
 
-Turn the task into a verifiable goal and loop until it passes: "add validation" → tests for invalid inputs, then make them pass; "fix the bug" → a test that reproduces it, then pass; "refactor X" → tests green before and after. For several steps, state a short plan, each step with its check:
+Convert each task into a goal you can check, then iterate until the check passes. A new validation rule starts as failing cases for bad input. A bug starts as a failing test that captures it. A refactor needs the same tests green on both sides. For several steps, write a short plan that pairs every step with the command or observation that proves it.
 
-```
-1. <step> → verify: <check>
-2. <step> → verify: <check>
-```
-
-Strong criteria let you work alone; "make it work" needs constant questions. Nothing is done without the check having run.
+Sharp criteria let you work unattended; "make it work" forces constant questions. Nothing is done until the check has run.
 
 ## 5. Write the code well
 

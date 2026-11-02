@@ -1,6 +1,6 @@
 ---
 name: idea-to-tickets
-description: "Turn an idea into a spec, an ordered task plan and tracer-bullet tickets, one gate per stage. Not for: sharpen-intent."
+description: "Turn an idea into a spec, plan and tickets. Not for: sharpen-intent."
 ---
 > Source: addyosmani/agent-skills (MIT), read 2026-11-02; mattpocock/skills (MIT), read 2026-11-02
 

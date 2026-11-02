@@ -1,6 +1,6 @@
 ---
 name: orchestrate-agents
-description: "Decide whether, when and how to run subagents, teammates or full agents, and how to split and verify the work. Not for: idea-to-tickets."
+description: "Decide when to use subagents, teammates or agents. Not for: idea-to-tickets."
 ---
 > Source: obra/superpowers (MIT), read 2026-11-02; wondelai/skills (MIT), read 2026-11-02
 

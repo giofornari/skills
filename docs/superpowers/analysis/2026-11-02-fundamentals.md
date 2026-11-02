@@ -107,6 +107,7 @@ launch-checklist: shipping-and-launch
 pack: fundamentals, superpowers, ponytail, session-memory, codegraph, humanizer, teach
 
 - Pack: superpowers, ponytail and session-memory stay whole (indivisible). humanizer stays a plugin (a different job). teach stays for the pilot; the Learning plan moves it. codegraph is a new local wrapper plugin (Task 5).
+- `session-memory` is a dependency of both `1-pack-fundamentals` and `2-pack-context-memory` until the Context & Memory plan decides where it lives; its category stays "Context & Memory". The double membership is intentional and temporary.
 - Out of the pack, still in `plugins[]`: grill-me, grill-with-docs, grilling, improve-codebase-architecture, retro, writing-for-agents, triage, andrej-karpathy-skills. The addy and mattpocock-skills plugins stay as plain donors, not in the pack.
 
 ## Result
@@ -114,29 +115,28 @@ Measured 2026-11-02 with `claude --plugin-dir plugins/fundamentals plugin detail
 
 | fused skill | always-on | on-invoke | donors' on-invoke sum | within bound |
 |---|---|---|---|---|
-| sharpen-intent | 50 | 1400 | 5500 (interview-me 4900 + grilling 600) | yes |
-| idea-to-tickets | 60 | 2500 | 14260 (idea-refine 3300, spec-driven-development 4500, planning-and-task-breakdown 3600, to-spec 960, to-tickets 1900) | yes |
-| root-cause-debug | 60 | 2200 | 6500 (debugging-and-error-recovery 3600 + diagnosing-bugs 2900) | yes |
-| review-change | 60 | 2900 | 15300 (code-review-and-quality 7400, doubt-driven-development 5800, code-review 2100) | yes |
-| deepen-architecture | 60 | 2600 | 10200 (improve-codebase-architecture 2100, codebase-design 2000, domain-modeling 1000, software-design-philosophy 5100) | yes |
-| discipline | 60 | 2000 | 16150 (karpathy-guidelines 850, code-simplification 4700, clean-code 5100, pragmatic-programmer 5500) | yes |
-| orchestrate-agents | 60 | 2100 | 21700 (dispatching-parallel-agents 2100, subagent-driven-development 7000, high-output-management 6600, team-topologies 6000) | yes |
-| launch-checklist | 60 | 1700 | 4200 (shipping-and-launch) | yes |
+| sharpen-intent | 40 | 1400 | 5500 (interview-me 4900 + grilling 600) | yes |
+| idea-to-tickets | 40 | 2500 | 14260 (idea-refine 3300, spec-driven-development 4500, planning-and-task-breakdown 3600, to-spec 960, to-tickets 1900) | yes |
+| root-cause-debug | 40 | 2200 | 6500 (debugging-and-error-recovery 3600 + diagnosing-bugs 2900) | yes |
+| review-change | 40 | 2900 | 15300 (code-review-and-quality 7400, doubt-driven-development 5800, code-review 2100) | yes |
+| deepen-architecture | 40 | 2600 | 10200 (improve-codebase-architecture 2100, codebase-design 2000, domain-modeling 1000, software-design-philosophy 5100) | yes |
+| discipline | 40 | 2000 | 16150 (karpathy-guidelines 850, code-simplification 4700, clean-code 5100, pragmatic-programmer 5500) | yes |
+| orchestrate-agents | 40 | 2100 | 21700 (dispatching-parallel-agents 2100, subagent-driven-development 7000, high-output-management 6600, team-topologies 6000) | yes |
+| launch-checklist | 40 | 1700 | 4200 (shipping-and-launch) | yes |
 
-Essential always-on: **458**. Donors that left the pack:
-- fused donors only: grill-me 34 + grill-with-docs 60 + grilling 70 + improve-codebase-architecture 68 + andrej-karpathy-skills 105 = **337**. 458 is above it: the strict reading of the cost rule fails by 121.
-- every plugin that left the pack (the fused five plus retro 28, writing-for-agents 64, triage 57) = **486**. 458 is below it.
-The remaining always-on per skill is name plus description (~50-60 each); eight skills cannot reach 42 each. The pack-level comparison (Task 5) is the number that matters to the user.
+Essential always-on: **329**. Bound (spec §6.3a, "somma dei soli plugin donatori usciti dal pack"): the plugins whose skills were fused and that left the pack, grill-me 34 + grill-with-docs 60 + grilling 70 + improve-codebase-architecture 68 + andrej-karpathy-skills 105 = **337**. 329 is below it, by 8.
+- The first build measured 458 (descriptions of 17-23 words, ~50-60 each) and failed this bound; the review caught a wider reading (486, counting retro, writing-for-agents and triage, which fused nothing) that does not follow the spec. The fix shortened each description to one clause (8-14 words, ~40 each), which keeps the `Not for:` sibling.
+- The trade: shorter descriptions give the model less to match on when deciding to invoke a skill. Each still names its job.
 
 ### Pack
-`1-pack-fundamentals` dependencies, in order: fundamentals 458, superpowers 848, ponytail 641, session-memory 2873, codegraph 0 (MCP wrapper, tool schemas resolved at runtime), humanizer 144, teach 32. Total **4996**.
+`1-pack-fundamentals` dependencies, in order: fundamentals 329, superpowers 848, ponytail 641, session-memory 2873, codegraph 0 (MCP wrapper, tool schemas resolved at runtime), humanizer 144, teach 32. Total **4867**.
 
 | comparison | baseline | new pack | verdict |
 |---|---|---|---|
-| raw (old pack, no session-memory) | 2151 | 4996 | above: +2845, all of it `session-memory` (2873) |
-| adjusted (old pack + session-memory moved in) | 5024 | 4996 | below by 28 |
-| new pack without `session-memory` | 2151 | 2123 | below by 28 |
+| raw (old pack, no session-memory) | 2151 | 4867 | above: +2716, all of it `session-memory` (2873) |
+| adjusted (old pack + session-memory moved in) | 5024 | 4867 | below by 157 |
+| new pack without `session-memory` | 2151 | 1994 | below by 157 |
 
 - The pack passes the cost rule only on the adjusted baseline. Moving claude-mem in is the owner's call; its 2873 is 30 skills (several look personal to its author: childhood, owner-goals, wowerpoint) and 9 hooks whose injected context the tool does not count.
-- Hook-injected context is still uncounted: superpowers (~1100), ponytail, session-memory (9 hooks). True always-on is higher than 4996.
+- Hook-injected context is still uncounted: superpowers (~1100), ponytail, session-memory (9 hooks). True always-on is higher than 4867.
 - The pack no longer depends on: grill-me, grill-with-docs, grilling, improve-codebase-architecture, andrej-karpathy-skills (fused); retro, writing-for-agents, triage (dropped). All stay in `plugins[]`.

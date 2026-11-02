@@ -27,7 +27,7 @@ discipline
     Caveat: the repository ships no LICENSE file. MIT is declared in its plugin.json, in the
     SKILL.md frontmatter and in the README, with no copyright holder named. The four ideas used
     (think before coding, simplicity first, surgical changes, goal-driven execution) are
-    restated in new wording; no text is copied. Owner decision, 2026-11-02.
+    restated in new wording; no passage is copied. Owner decision, 2026-11-02.
   addyosmani/agent-skills (MIT), Copyright (c) 2025 Addy Osmani, read 2026-11-02
   wondelai/skills (MIT), Copyright (c) 2025 Wondel.ai sp. z o.o., read 2026-11-02
 

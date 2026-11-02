@@ -1,6 +1,6 @@
 ---
 name: review-change
-description: "Review a diff or PR against its spec, the repo's standards and five quality axes; doubt non-trivial decisions. Not for: root-cause-debug."
+description: "Review a diff or PR against spec and standards. Not for: root-cause-debug."
 ---
 > Source: addyosmani/agent-skills (MIT), read 2026-11-02; mattpocock/skills (MIT), read 2026-11-02
 
