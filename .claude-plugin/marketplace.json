@@ -18,7 +18,7 @@
     {
       "name": "1-pack-fundamentals",
       "source": "./plugins/1-pack-fundamentals",
-      "description": "Fundamentals: fundamentals, superpowers, ponytail, session-memory, codegraph, humanizer, teach",
+      "description": "Fundamentals: fundamentals, superpowers, ponytail, claudemem, codegraph, humanizer, teach",
       "category": "Fundamentals",
       "tags": [
         "pack"
@@ -27,7 +27,7 @@
         "fundamentals",
         "superpowers",
         "ponytail",
-        "session-memory",
+        "claudemem",
         "codegraph",
         "humanizer",
         "teach"
@@ -42,14 +42,14 @@
     {
       "name": "2-pack-context-memory",
       "source": "./plugins/2-pack-context-memory",
-      "description": "Context & Memory: honcho, session-memory, caveman, graphify",
+      "description": "Context & Memory: honcho, claudemem, caveman, graphify",
       "category": "Context & Memory",
       "tags": [
         "pack"
       ],
       "dependencies": [
         "honcho",
-        "session-memory",
+        "claudemem",
         "caveman",
         "graphify"
       ]
@@ -385,7 +385,7 @@
       "category": "Context & Memory"
     },
     {
-      "name": "session-memory",
+      "name": "claudemem",
       "source": {
         "source": "git-subdir",
         "url": "https://github.com/thedotmack/claude-mem.git",

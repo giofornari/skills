@@ -35,7 +35,7 @@ Per-skill on-invoke, the skills only reachable through a whole-repo plugin:
 ## Baseline
 Always-on of the 12 current `1-pack-fundamentals` dependencies: superpowers 848 + andrej-karpathy-skills 105 + humanizer 144 + ponytail 641 + grill-me 34 + grill-with-docs 60 + grilling 70 + teach 32 + improve-codebase-architecture 68 + triage 57 + retro 28 + writing-for-agents 64 = **2151** tokens.
 The tool does not count hook injection: superpowers' SessionStart hook adds about 1100 (true always-on about 3250 for the pack), ponytail's three hooks add an unmeasured amount.
-Adjusted baseline (Task 5 comparison): the owner moved `session-memory` (always-on 2873) into this pack, so the cost relocates from Context & Memory rather than appearing. Adjusted baseline = 2151 + 2873 = **5024**. Task 5 records the new pack against both numbers.
+Adjusted baseline (Task 5 comparison): the owner moved `claudemem` (always-on 2873) into this pack, so the cost relocates from Context & Memory rather than appearing. Adjusted baseline = 2151 + 2873 = **5024**. Task 5 records the new pack against both numbers.
 
 ## Groups
 One line per job. Verdict is my proposal: `fuse`, `keep best (<name>)` or `drop`. "Licences" says whether every donor named in the verdict is fusable (MIT/Apache-2.0/BSD/CC0, licence file present).
@@ -52,7 +52,7 @@ One line per job. Verdict is my proposal: `fuse`, `keep best (<name>)` or `drop`
 - other: ask-matt, handoff, wizard, setup-matt-pocock-skills (matt), using-agent-skills, context-engineering, source-driven-development, incremental-implementation, security-and-hardening, performance-optimization, frontend-ui-engineering (addy) — drop: routers, config, or outside the pack's job — licences: MIT, yes.
 
 ## Questions for the owner
-- (a) claude-mem is `session-memory` in Context & Memory, not in Fundamentals. You called it an indivisible Fundamentals plugin: does it move to the Fundamentals pack, or stay in Context & Memory?
+- (a) claude-mem was listed as `claudemem` in Context & Memory, not in Fundamentals. You called it an indivisible Fundamentals plugin: does it move to the Fundamentals pack, or stay in Context & Memory?
 - (b) `teach` is in the Fundamentals pack in the repo but listed under Learning in the spec §3. Moves it to Learning, or stays?
 - (c) The six non-pack Fundamentals plugins (interview-me, idea-refine, debugging-and-error-recovery, shipping-and-launch, agent-skills, mattpocock-skills) are donors too in the verdicts above. Right? And do any of them join the new pack as plugins (as-is)?
 - (d) andrej-karpathy-skills declares MIT in plugin.json, the SKILL.md frontmatter and the README, but ships no LICENSE file. Pointer (rule) or trust the declared MIT and fuse?
@@ -84,7 +84,7 @@ Owner asked for a discipline skill and a parallelisation skill that draw on wond
 
 - wondelai/skills: Copyright (c) 2025 Wondel.ai sp. z o.o. The skills summarise published books (Ousterhout, Hunt & Thomas, Martin, Grove, Skelton & Pais); a fused skill takes the ideas in fresh wording, not the text.
 - addy `code-simplification` (MIT, 4700) and superpowers `dispatching-parallel-agents` (MIT, 2100) and `subagent-driven-development` (MIT, 7000) are also donors; their plugins stay where they are.
-- `session-memory` (thedotmack/claude-mem 15.8.3, plugin.json says Apache-2.0): 30 skills, 9 hooks, 1 MCP server, **always-on 2873**. Measured on the installed cache copy. Stays whole, not a donor.
+- `claudemem` (thedotmack/claude-mem 15.8.3, plugin.json says Apache-2.0): 30 skills, 9 hooks, 1 MCP server, **always-on 2873**. Measured on the installed cache copy. Stays whole, not a donor.
 - `codegraph` is `@colbymchenry/codegraph` 0.9.5 (npm, MIT), a CLI with `serve --mcp`; it ships no Claude Code plugin manifest. A wrapper plugin (MCP only) measures ~0 always-on, like `plugins/camoufox`.
 
 ## Decisions
@@ -92,7 +92,7 @@ Owner decisions 2026-11-02. The proposals above stand except as corrected below.
 - Owner: retro does not matter. `retro` and `writing-for-agents` are dropped, not fused.
 - Owner: the coding-discipline group becomes one skill, fusing karpathy-guidelines with our other discipline skills, drawing on wondelai.
 - Owner: a new skill explains whether, when and how to launch subagents, teammates or full agents (parallelisation), drawing heavily on wondelai.
-- Owner: claude-mem stays its own plugin (`session-memory`), in the Fundamentals pack with ponytail and codegraph.
+- Owner: claude-mem stays its own plugin (entry `claudemem`), in the Fundamentals pack with ponytail and codegraph.
 - Fused skills (one `SKILL.md` each, name never equals a donor skill):
 
 sharpen-intent: interview-me, grilling
@@ -104,10 +104,10 @@ discipline: karpathy-guidelines, code-simplification, clean-code, pragmatic-prog
 orchestrate-agents: dispatching-parallel-agents, subagent-driven-development, high-output-management, team-topologies
 launch-checklist: shipping-and-launch
 
-pack: fundamentals, superpowers, ponytail, session-memory, codegraph, humanizer, teach
+pack: fundamentals, superpowers, ponytail, claudemem, codegraph, humanizer, teach
 
-- Pack: superpowers, ponytail and session-memory stay whole (indivisible). humanizer stays a plugin (a different job). teach stays for the pilot; the Learning plan moves it. codegraph is a new local wrapper plugin (Task 5).
-- `session-memory` is a dependency of both `1-pack-fundamentals` and `2-pack-context-memory` until the Context & Memory plan decides where it lives; its category stays "Context & Memory". The double membership is intentional and temporary.
+- Pack: superpowers, ponytail and claudemem stay whole (indivisible). humanizer stays a plugin (a different job). teach stays for the pilot; the Learning plan moves it. codegraph is a new local wrapper plugin (Task 5).
+- `claudemem` is a dependency of both `1-pack-fundamentals` and `2-pack-context-memory` until the Context & Memory plan decides where it lives; its category stays "Context & Memory". The double membership is intentional and temporary.
 - Out of the pack, still in `plugins[]`: grill-me, grill-with-docs, grilling, improve-codebase-architecture, retro, writing-for-agents, triage, andrej-karpathy-skills. The addy and mattpocock-skills plugins stay as plain donors, not in the pack.
 
 ## Result
@@ -129,14 +129,14 @@ Essential always-on: **329**. Bound (spec §6.3a, "somma dei soli plugin donator
 - The trade: shorter descriptions give the model less to match on when deciding to invoke a skill. Each still names its job.
 
 ### Pack
-`1-pack-fundamentals` dependencies, in order: fundamentals 329, superpowers 848, ponytail 641, session-memory 2873, codegraph 0 (MCP wrapper, tool schemas resolved at runtime), humanizer 144, teach 32. Total **4867**.
+`1-pack-fundamentals` dependencies, in order: fundamentals 329, superpowers 848, ponytail 641, claudemem 2873, codegraph 0 (MCP wrapper, tool schemas resolved at runtime), humanizer 144, teach 32. Total **4867**.
 
 | comparison | baseline | new pack | verdict |
 |---|---|---|---|
-| raw (old pack, no session-memory) | 2151 | 4867 | above: +2716, all of it `session-memory` (2873) |
-| adjusted (old pack + session-memory moved in) | 5024 | 4867 | below by 157 |
-| new pack without `session-memory` | 2151 | 1994 | below by 157 |
+| raw (old pack, no claudemem) | 2151 | 4867 | above: +2716, all of it `claudemem` (2873) |
+| adjusted (old pack + claudemem moved in) | 5024 | 4867 | below by 157 |
+| new pack without `claudemem` | 2151 | 1994 | below by 157 |
 
 - The pack passes the cost rule only on the adjusted baseline. Moving claude-mem in is the owner's call; its 2873 is 30 skills (several look personal to its author: childhood, owner-goals, wowerpoint) and 9 hooks whose injected context the tool does not count.
-- Hook-injected context is still uncounted: superpowers (~1100), ponytail, session-memory (9 hooks). True always-on is higher than 4867.
+- Hook-injected context is still uncounted: superpowers (~1100), ponytail, claudemem (9 hooks). True always-on is higher than 4867.
 - The pack no longer depends on: grill-me, grill-with-docs, grilling, improve-codebase-architecture, andrej-karpathy-skills (fused); retro, writing-for-agents, triage (dropped). All stay in `plugins[]`.
