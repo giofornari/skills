@@ -1,6 +1,6 @@
 ---
 name: idea-to-tickets
-description: "Turn an idea into a spec, plan and tickets. Not for: sharpen-intent."
+description: "Turn an idea into a spec, plan and tickets. Not for: interview."
 ---
 > Source: addyosmani/agent-skills (MIT), read 2026-11-02; mattpocock/skills (MIT), read 2026-11-02
 
@@ -10,7 +10,7 @@ One pipeline, four stages, each ending in an artifact the human approves before 
 
 ## Use when
 
-A new project, feature or change that touches several files or takes over ~30 minutes, and no spec exists. Start at the stage the work is in: vague idea → Refine; chosen direction → Spec; approved spec → Plan; plan → Tickets. Skip for one-line fixes and unambiguous self-contained changes. If the user does not yet know what they want at all, run `sharpen-intent` first.
+A new project, feature or change that touches several files or takes over ~30 minutes, and no spec exists. Start at the stage the work is in: vague idea → Refine; chosen direction → Spec; approved spec → Plan; plan → Tickets. Skip for one-line fixes and unambiguous self-contained changes. If the user does not yet know what they want at all, run `interview` first.
 
 ## Gates (all stages)
 
