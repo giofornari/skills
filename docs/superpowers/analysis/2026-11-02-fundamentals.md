@@ -108,3 +108,22 @@ pack: fundamentals, superpowers, ponytail, session-memory, codegraph, humanizer,
 
 - Pack: superpowers, ponytail and session-memory stay whole (indivisible). humanizer stays a plugin (a different job). teach stays for the pilot; the Learning plan moves it. codegraph is a new local wrapper plugin (Task 5).
 - Out of the pack, still in `plugins[]`: grill-me, grill-with-docs, grilling, improve-codebase-architecture, retro, writing-for-agents, triage, andrej-karpathy-skills. The addy and mattpocock-skills plugins stay as plain donors, not in the pack.
+
+## Result
+Measured 2026-11-02 with `claude --plugin-dir plugins/fundamentals plugin details fundamentals` (tool rounds the figures). Eight skills, 0 hooks, 0 MCP servers.
+
+| fused skill | always-on | on-invoke | donors' on-invoke sum | within bound |
+|---|---|---|---|---|
+| sharpen-intent | 50 | 1400 | 5500 (interview-me 4900 + grilling 600) | yes |
+| idea-to-tickets | 60 | 2500 | 14260 (idea-refine 3300, spec-driven-development 4500, planning-and-task-breakdown 3600, to-spec 960, to-tickets 1900) | yes |
+| root-cause-debug | 60 | 2200 | 6500 (debugging-and-error-recovery 3600 + diagnosing-bugs 2900) | yes |
+| review-change | 60 | 2900 | 15300 (code-review-and-quality 7400, doubt-driven-development 5800, code-review 2100) | yes |
+| deepen-architecture | 60 | 2600 | 10200 (improve-codebase-architecture 2100, codebase-design 2000, domain-modeling 1000, software-design-philosophy 5100) | yes |
+| discipline | 60 | 2000 | 16150 (karpathy-guidelines 850, code-simplification 4700, clean-code 5100, pragmatic-programmer 5500) | yes |
+| orchestrate-agents | 60 | 2100 | 21700 (dispatching-parallel-agents 2100, subagent-driven-development 7000, high-output-management 6600, team-topologies 6000) | yes |
+| launch-checklist | 60 | 1700 | 4200 (shipping-and-launch) | yes |
+
+Essential always-on: **458**. Donors that left the pack:
+- fused donors only: grill-me 34 + grill-with-docs 60 + grilling 70 + improve-codebase-architecture 68 + andrej-karpathy-skills 105 = **337**. 458 is above it: the strict reading of the cost rule fails by 121.
+- every plugin that left the pack (the fused five plus retro 28, writing-for-agents 64, triage 57) = **486**. 458 is below it.
+The remaining always-on per skill is name plus description (~50-60 each); eight skills cannot reach 42 each. The pack-level comparison (Task 5) is the number that matters to the user.

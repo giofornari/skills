@@ -7,6 +7,15 @@
   "description": "Curated skills, plugins and MCPs: one pack per category, every plugin also installable on its own.",
   "plugins": [
     {
+      "name": "fundamentals",
+      "source": "./plugins/fundamentals",
+      "description": "Fundamentals essential: eight skills fused from several plugins. Sharpen intent, plan to tickets, root-cause debug, review, deepen architecture, discipline, orchestrate agents, launch checklist.",
+      "category": "Fundamentals",
+      "tags": [
+        "essential"
+      ]
+    },
+    {
       "name": "1-pack-fundamentals",
       "source": "./plugins/1-pack-fundamentals",
       "description": "Fundamentals: superpowers, andrej-karpathy-skills, humanizer, ponytail, grill-me, grill-with-docs, grilling, teach, improve-codebase-architecture, triage, retro, writing-for-agents",
