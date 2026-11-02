@@ -14,7 +14,7 @@ Claude Code and Desktop marketplace `giofornari`. `.claude-plugin/marketplace.js
 - Extract one skill from a larger repo with `git-subdir` plus `"strict": false, "skills": ["./"]`.
 - Keep sources unpinned and set no `version` in `marketplace.json` or any `plugin.json`: updates then follow upstream. The validator's "No version specified" warnings are expected.
 - Pack names start with a digit (`1-pack-…`): the `/plugin` list sorts alphabetically, and digits sort first.
-- Packs hold dependencies only. Local code lives in `plugins/`: the pack manifests, the essentials, `camoufox`, `graphify`.
+- Packs hold dependencies only. Local code lives in `plugins/`: the pack manifests, the essentials, `camoufox`, `codegraph`, `graphify`.
 - `README.md`, `README.it.md` and every PNG in `docs/` (`docs/it/` and `map.it.png` are the Italian set) mirror `marketplace.json`: names, descriptions, categories, token costs. A new plugin needs its Italian description too. Update all of them in the same commit.
 
 ## Essentials

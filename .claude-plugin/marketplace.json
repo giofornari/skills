@@ -18,25 +18,26 @@
     {
       "name": "1-pack-fundamentals",
       "source": "./plugins/1-pack-fundamentals",
-      "description": "Fundamentals: superpowers, andrej-karpathy-skills, humanizer, ponytail, grill-me, grill-with-docs, grilling, teach, improve-codebase-architecture, triage, retro, writing-for-agents",
+      "description": "Fundamentals: fundamentals, superpowers, ponytail, session-memory, codegraph, humanizer, teach",
       "category": "Fundamentals",
       "tags": [
         "pack"
       ],
       "dependencies": [
+        "fundamentals",
         "superpowers",
-        "andrej-karpathy-skills",
-        "humanizer",
         "ponytail",
-        "grill-me",
-        "grill-with-docs",
-        "grilling",
-        "teach",
-        "improve-codebase-architecture",
-        "triage",
-        "retro",
-        "writing-for-agents"
+        "session-memory",
+        "codegraph",
+        "humanizer",
+        "teach"
       ]
+    },
+    {
+      "name": "codegraph",
+      "source": "./plugins/codegraph",
+      "description": "CodeGraph MCP: code-intelligence knowledge graph (symbols, callers, impact). Needs the CLI installed: npm install -g @colbymchenry/codegraph.",
+      "category": "Fundamentals"
     },
     {
       "name": "2-pack-context-memory",

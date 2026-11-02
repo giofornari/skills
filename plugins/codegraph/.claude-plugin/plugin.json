@@ -1,0 +1,14 @@
+{
+  "name": "codegraph",
+  "description": "CodeGraph MCP: code-intelligence knowledge graph (symbols, callers, impact). Needs the CLI: npm install -g @colbymchenry/codegraph, then codegraph init in the project.",
+  "author": {
+    "name": "giofornari",
+    "url": "https://github.com/giofornari"
+  },
+  "mcpServers": {
+    "codegraph": {
+      "command": "codegraph",
+      "args": ["serve", "--mcp"]
+    }
+  }
+}

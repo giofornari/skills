@@ -127,3 +127,16 @@ Essential always-on: **458**. Donors that left the pack:
 - fused donors only: grill-me 34 + grill-with-docs 60 + grilling 70 + improve-codebase-architecture 68 + andrej-karpathy-skills 105 = **337**. 458 is above it: the strict reading of the cost rule fails by 121.
 - every plugin that left the pack (the fused five plus retro 28, writing-for-agents 64, triage 57) = **486**. 458 is below it.
 The remaining always-on per skill is name plus description (~50-60 each); eight skills cannot reach 42 each. The pack-level comparison (Task 5) is the number that matters to the user.
+
+### Pack
+`1-pack-fundamentals` dependencies, in order: fundamentals 458, superpowers 848, ponytail 641, session-memory 2873, codegraph 0 (MCP wrapper, tool schemas resolved at runtime), humanizer 144, teach 32. Total **4996**.
+
+| comparison | baseline | new pack | verdict |
+|---|---|---|---|
+| raw (old pack, no session-memory) | 2151 | 4996 | above: +2845, all of it `session-memory` (2873) |
+| adjusted (old pack + session-memory moved in) | 5024 | 4996 | below by 28 |
+| new pack without `session-memory` | 2151 | 2123 | below by 28 |
+
+- The pack passes the cost rule only on the adjusted baseline. Moving claude-mem in is the owner's call; its 2873 is 30 skills (several look personal to its author: childhood, owner-goals, wowerpoint) and 9 hooks whose injected context the tool does not count.
+- Hook-injected context is still uncounted: superpowers (~1100), ponytail, session-memory (9 hooks). True always-on is higher than 4996.
+- The pack no longer depends on: grill-me, grill-with-docs, grilling, improve-codebase-architecture, andrej-karpathy-skills (fused); retro, writing-for-agents, triage (dropped). All stay in `plugins[]`.
