@@ -14,10 +14,6 @@ root-cause-debug
   addyosmani/agent-skills (MIT), Copyright (c) 2025 Addy Osmani, read 2026-11-02
   mattpocock/skills (MIT), Copyright (c) 2026 Matt Pocock, read 2026-11-02
 
-deepen-architecture
-  mattpocock/skills (MIT), Copyright (c) 2026 Matt Pocock, read 2026-11-02
-  wondelai/skills (MIT), Copyright (c) 2025 Wondel.ai sp. z o.o., read 2026-11-02
-
 discipline
   multica-ai/andrej-karpathy-skills (MIT), read 2026-11-02
     Caveat: the repository ships no LICENSE file. MIT is declared in its plugin.json, in the

@@ -1,6 +1,6 @@
 ---
 name: root-cause-debug
-description: "Use before fixing any bug, error, failing test or logic flaw. Not for: deepen-architecture."
+description: "Use before fixing any bug, error, failing test or logic flaw. Not for: discipline."
 ---
 > Source: addyosmani/agent-skills (MIT), read 2026-11-02; mattpocock/skills (MIT), read 2026-11-02
 

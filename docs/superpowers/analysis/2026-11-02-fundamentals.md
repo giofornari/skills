@@ -93,13 +93,13 @@ Owner decisions 2026-11-02. The proposals above stand except as corrected below.
 - Owner: the coding-discipline group becomes one skill, fusing karpathy-guidelines with our other discipline skills, drawing on wondelai.
 - Owner: a new skill explains whether, when and how to launch subagents, teammates or full agents (parallelisation), drawing heavily on wondelai.
 - Owner: claude-mem stays its own plugin (entry `claudemem`), in the Fundamentals pack with ponytail and codegraph.
+- Owner, during the file-by-file review: `deepen-architecture` is dropped, not fused (the owner would never use it). `improve-codebase-architecture` stays out of the pack and in `plugins[]`, like `retro`; the bound above no longer counts it. Its other donors (mattpocock `codebase-design`, `domain-modeling`; wondelai `software-design-philosophy`) were never in the pack.
 - Owner, during the file-by-file review: `review-change` is dropped, not fused. It overlaps `/code-review`, `/security-review` and superpowers' `requesting-code-review`. What goes with it: a spec axis and a standards axis kept apart, the test-mutation check, the doubt loop with the author's claim withheld, and fixed report rules (severity, "zero findings is valid"). Its donors (addy `code-review-and-quality`, `doubt-driven-development`, mattpocock `code-review`) were never in the pack; their plugins stay as plain donors.
 - Fused skills (one `SKILL.md` each, name never equals a donor skill):
 
 interview: interview-me, grilling
 idea-to-tickets: idea-refine, spec-driven-development, planning-and-task-breakdown, to-spec, to-tickets
 root-cause-debug: debugging-and-error-recovery, diagnosing-bugs
-deepen-architecture: improve-codebase-architecture, codebase-design, domain-modeling, software-design-philosophy
 discipline: karpathy-guidelines, code-simplification, clean-code, pragmatic-programmer
 orchestrate-agents: dispatching-parallel-agents, subagent-driven-development, high-output-management, team-topologies
 launch-checklist: shipping-and-launch
@@ -111,31 +111,30 @@ pack: fundamentals, superpowers, ponytail, claudemem, codegraph, humanizer, teac
 - Out of the pack, still in `plugins[]`: grill-me, grill-with-docs, grilling, improve-codebase-architecture, retro, writing-for-agents, triage, andrej-karpathy-skills. The addy and mattpocock-skills plugins stay as plain donors, not in the pack.
 
 ## Result
-Measured 2026-11-02 with `claude --plugin-dir plugins/fundamentals plugin details fundamentals` (tool rounds the figures). Seven skills, 0 hooks, 0 MCP servers.
+Measured 2026-11-02 with `claude --plugin-dir plugins/fundamentals plugin details fundamentals` (tool rounds the figures). Six skills, 0 hooks, 0 MCP servers.
 
 | fused skill | always-on | on-invoke | donors' on-invoke sum | within bound |
 |---|---|---|---|---|
 | interview | 50 | 3100 | 5500 (interview-me 4900 + grilling 600) | yes |
 | idea-to-tickets | 40 | 5300 | 14260 (idea-refine 3300, spec-driven-development 4500, planning-and-task-breakdown 3600, to-spec 960, to-tickets 1900) | yes |
 | root-cause-debug | 50 | 3400 | 6500 (debugging-and-error-recovery 3600 + diagnosing-bugs 2900) | yes |
-| deepen-architecture | 40 | 2500 | 10200 (improve-codebase-architecture 2100, codebase-design 2000, domain-modeling 1000, software-design-philosophy 5100) | yes |
 | discipline | 40 | 2000 | 16150 (karpathy-guidelines 850, code-simplification 4700, clean-code 5100, pragmatic-programmer 5500) | yes |
 | orchestrate-agents | 40 | 2000 | 21700 (dispatching-parallel-agents 2100, subagent-driven-development 7000, high-output-management 6600, team-topologies 6000) | yes |
 | launch-checklist | 40 | 1600 | 4200 (shipping-and-launch) | yes |
 
-Essential always-on: **311**. Bound (spec §6.3a, "somma dei soli plugin donatori usciti dal pack"): the plugins whose skills were fused and that left the pack, grill-me 34 + grill-with-docs 60 + grilling 70 + improve-codebase-architecture 68 + andrej-karpathy-skills 105 = **337**. 311 is below it, by 26.
+Essential always-on: **265**. Bound (spec §6.3a, "somma dei soli plugin donatori usciti dal pack"): the plugins whose skills were fused and that left the pack, grill-me 34 + grill-with-docs 60 + grilling 70 + andrej-karpathy-skills 105 = **269**. `improve-codebase-architecture` (68) no longer counts: its skill was dropped, not fused. 265 is below it, by 4.
 - The first build measured 458 (descriptions of 17-23 words, ~50-60 each) and failed this bound; the review caught a wider reading (486, counting retro, writing-for-agents and triage, which fused nothing) that does not follow the spec. The fix shortened each description to one clause (8-14 words, ~40 each), which keeps the `Not for:` sibling.
 - The trade: shorter descriptions give the model less to match on when deciding to invoke a skill. Each still names its job.
 
 ### Pack
-`1-pack-fundamentals` dependencies, in order: fundamentals 311, superpowers 848, ponytail 641, claudemem 2873, codegraph 0 (MCP wrapper, tool schemas resolved at runtime), humanizer 144, teach 32. Total **4849**.
+`1-pack-fundamentals` dependencies, in order: fundamentals 265, superpowers 848, ponytail 641, claudemem 2873, codegraph 0 (MCP wrapper, tool schemas resolved at runtime), humanizer 144, teach 32. Total **4803**.
 
 | comparison | baseline | new pack | verdict |
 |---|---|---|---|
-| raw (old pack, no claudemem) | 2151 | 4849 | above: +2698, all of it `claudemem` (2873) |
-| adjusted (old pack + claudemem moved in) | 5024 | 4849 | below by 175 |
-| new pack without `claudemem` | 2151 | 1976 | below by 175 |
+| raw (old pack, no claudemem) | 2151 | 4803 | above: +2652, all of it `claudemem` (2873) |
+| adjusted (old pack + claudemem moved in) | 5024 | 4803 | below by 221 |
+| new pack without `claudemem` | 2151 | 1930 | below by 221 |
 
 - The pack passes the cost rule only on the adjusted baseline. Moving claude-mem in is the owner's call; its 2873 is 30 skills (several look personal to its author: childhood, owner-goals, wowerpoint) and 9 hooks whose injected context the tool does not count.
-- Hook-injected context is still uncounted: superpowers (~1100), ponytail, claudemem (9 hooks). True always-on is higher than 4849.
-- The pack no longer depends on: grill-me, grill-with-docs, grilling, improve-codebase-architecture, andrej-karpathy-skills (fused); retro, writing-for-agents, triage (dropped). All stay in `plugins[]`.
+- Hook-injected context is still uncounted: superpowers (~1100), ponytail, claudemem (9 hooks). True always-on is higher than 4803.
+- The pack no longer depends on: grill-me, grill-with-docs, grilling, andrej-karpathy-skills (fused); improve-codebase-architecture, retro, writing-for-agents, triage (dropped). All stay in `plugins[]`.
