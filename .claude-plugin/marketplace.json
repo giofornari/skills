@@ -5,6 +5,9 @@
     "url": "https://github.com/giofornari"
   },
   "description": "Curated skills, plugins and MCPs: one pack per category, every plugin also installable on its own.",
+  "allowCrossMarketplaceDependenciesOn": [
+    "thedotmack"
+  ],
   "plugins": [
     {
       "name": "fundamentals",
@@ -18,7 +21,7 @@
     {
       "name": "1-pack-fundamentals",
       "source": "./plugins/1-pack-fundamentals",
-      "description": "Fundamentals: fundamentals, superpowers, ponytail, claudemem, codegraph, humanizer, teach",
+      "description": "Fundamentals: fundamentals, superpowers, ponytail, claude-mem, codegraph, humanizer, teach",
       "category": "Fundamentals",
       "tags": [
         "pack"
@@ -27,7 +30,7 @@
         "fundamentals",
         "superpowers",
         "ponytail",
-        "claudemem",
+        "claude-mem@thedotmack",
         "codegraph",
         "humanizer",
         "teach"
@@ -42,14 +45,14 @@
     {
       "name": "2-pack-context-memory",
       "source": "./plugins/2-pack-context-memory",
-      "description": "Context & Memory: honcho, claudemem, caveman, graphify",
+      "description": "Context & Memory: honcho, claude-mem, caveman, graphify",
       "category": "Context & Memory",
       "tags": [
         "pack"
       ],
       "dependencies": [
         "honcho",
-        "claudemem",
+        "claude-mem@thedotmack",
         "caveman",
         "graphify"
       ]
@@ -383,16 +386,6 @@
       },
       "description": "Persistent memory for Claude Code sessions using Honcho.",
       "strict": false,
-      "category": "Context & Memory"
-    },
-    {
-      "name": "claudemem",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/thedotmack/claude-mem.git",
-        "path": "plugin"
-      },
-      "description": "claude-mem by thedotmack: captures, compresses and re-injects what the agent did across sessions.",
       "category": "Context & Memory"
     },
     {

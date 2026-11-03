@@ -10,7 +10,7 @@ Claude Code and Desktop marketplace `giofornari`. `.claude-plugin/marketplace.js
 
 ## Conventions
 
-- Entry `name` equals the plugin's manifest name. Names starting with `claude-` are reserved and fail validation: name it for what it does, or drop the dash (`claude-mem` is listed as `claudemem`).
+- Entry `name` equals the plugin's manifest name. Names starting with `claude-` are reserved and fail validation, so such a plugin is not listed here: depend on it from its own marketplace (`claude-mem` is `claude-mem@thedotmack` in the pack `dependencies`, with `thedotmack` in `allowCrossMarketplaceDependenciesOn`). Users add that marketplace first.
 - Extract one skill from a larger repo with `git-subdir` plus `"strict": false, "skills": ["./"]`.
 - Keep sources unpinned and set no `version` in `marketplace.json` or any `plugin.json`: updates then follow upstream. The validator's "No version specified" warnings are expected.
 - Pack names start with a digit (`1-pack-…`): the `/plugin` list sorts alphabetically, and digits sort first.

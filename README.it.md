@@ -12,6 +12,7 @@ Qui non c'è niente di copiato. Ogni voce punta al repo originale e segue l'ulti
 
 ```
 /plugin marketplace add giofornari/skills
+/plugin marketplace add thedotmack/claude-mem
 /plugin install 1-pack-fundamentals@giofornari
 ```
 
@@ -104,7 +105,7 @@ I plugin con tag `bonus` e i due plugin dei repo interi non fanno parte di nessu
 | Plugin | Cosa fa | Carica | Token |
 |---|---|---|---|
 | [`honcho`](https://www.npmjs.com/package/@honcho-ai/claude-honcho) | Memoria persistente per le sessioni di Claude Code con Honcho | 7 skill + MCP | ~167 |
-| [`session-memory`](https://github.com/thedotmack/claude-mem/tree/HEAD/plugin) | claude-mem di thedotmack: cattura, comprime e reinietta ciò che l'agente ha fatto tra una sessione e l'altra | 30 skill + MCP | ~2.127 |
+| [`claude-mem`](https://github.com/thedotmack/claude-mem/tree/HEAD/plugin) | claude-mem di thedotmack: cattura, comprime e reinietta ciò che l'agente ha fatto tra una sessione e l'altra | 30 skill + MCP | ~2.127 |
 | [`caveman`](https://github.com/JuliusBrussee/caveman) | Modalità di output telegrafico e strumenti per risparmiare token | 23 skill | ~1.366 |
 | [`graphify`](./plugins/graphify) | Installa Graphify, la CLI che trasforma il codice in un grafo di conoscenza, con il suo installer ufficiale | 1 skill | ~36 |
 
