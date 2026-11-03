@@ -9,7 +9,7 @@
     {
       "name": "fundamentals",
       "source": "./plugins/fundamentals",
-      "description": "Fundamentals essential: eight skills fused from several plugins. Sharpen intent, plan to tickets, root-cause debug, review, deepen architecture, discipline, orchestrate agents, launch checklist.",
+      "description": "Fundamentals essential: seven skills fused from several plugins. Sharpen intent, plan to tickets, root-cause debug, deepen architecture, discipline, orchestrate agents, launch checklist.",
       "category": "Fundamentals",
       "tags": [
         "essential"

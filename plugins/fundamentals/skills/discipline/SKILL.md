@@ -1,6 +1,6 @@
 ---
 name: discipline
-description: "Think first, keep it simple, change only what is asked. Not for: review-change."
+description: "Think first, keep it simple, change only what is asked. Not for: interview."
 ---
 > Source: multica-ai/andrej-karpathy-skills (MIT), read 2026-11-02; addyosmani/agent-skills (MIT), read 2026-11-02; wondelai/skills (MIT), read 2026-11-02
 

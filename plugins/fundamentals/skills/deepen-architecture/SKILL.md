@@ -1,6 +1,6 @@
 ---
 name: deepen-architecture
-description: "Find shallow modules and propose deeper ones. Not for: review-change."
+description: "Find shallow modules and propose deeper ones. Not for: root-cause-debug."
 ---
 > Source: mattpocock/skills (MIT), read 2026-11-02; wondelai/skills (MIT), read 2026-11-02
 
