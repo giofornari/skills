@@ -1,12 +1,18 @@
 ---
 name: discipline
-description: "Think first, keep it simple, change only what is asked. Not for: interview."
+description: "Use before writing or changing any code. Not for: interview."
 ---
 > Source: multica-ai/andrej-karpathy-skills (MIT), read 2026-11-02; addyosmani/agent-skills (MIT), read 2026-11-02; wondelai/skills (MIT), read 2026-11-02
 
 # Discipline
 
-Habits that stop the usual agent mistakes: silent assumptions, overbuilt code, drive-by edits, "done" without proof. They lean towards caution over speed; for a trivial task use judgment. Code is read far more than written, so optimise for the reader.
+Habits that stop the usual agent mistakes: silent assumptions, overbuilt code, drive-by edits, "done" without proof. They lean towards caution over speed. Code is read far more than written, so optimise for the reader.
+
+## Use when (always, at any size)
+
+Load this before the first edit of any task that creates or changes code, config, tests or scripts: a feature, a fix, a refactor, a simplification, a rename, a one-line tweak. "It is a one-liner" is not an exemption: here the habits cost seconds and save the rework. Skip it only for reading, questions and prose. Once per task is enough; read it again only when the scope changes.
+
+A request too vague to start on is not this skill's job: stop and use `interview`.
 
 ## 1. Think before coding
 
