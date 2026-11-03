@@ -56,7 +56,7 @@ Entries come in four kinds:
 |---|---|---|
 | `1-pack-fundamentals` | 12 plugins | ~1,538 |
 | `2-pack-context-memory` | 4 plugins | ~3,696 |
-| `3-pack-design` | 4 plugins | ~3,166 |
+| `3-pack-design` | 5 plugins | ~3,324 |
 | `4-pack-design-advanced` | 4 plugins | ~1,481 |
 | `5-pack-learning` | 4 plugins | ~1,648 |
 | `6-pack-research` | 4 plugins | ~1,214 |
@@ -118,6 +118,7 @@ Plugins tagged `bonus` and the two full-repo plugins belong to no pack.
 | [`taste-skill`](https://github.com/Leonxlnx/taste-skill) | Art direction for websites, product pages and dashboards (taste-skill v2) | 1 skill | ~243 |
 | [`emil-kowalski-skills`](https://github.com/emilkowalski/skills) | Emil Kowalski's skills for designers and engineers: animation, UI polish, design engineering | 16 skills | ~1,902 |
 | [`ui-ux-pro-max`](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | Design intelligence: searchable styles, palettes, typography and UX guidelines | 7 skills | ~709 |
+| [`made-to-stick`](https://github.com/wondelai/skills/tree/HEAD/made-to-stick) | Craft messages that are understood, remembered and drive action with the SUCCESs checklist | 1 skill | ~158 |
 
 ### Design Advanced
 

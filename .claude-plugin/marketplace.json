@@ -57,7 +57,7 @@
     {
       "name": "3-pack-design",
       "source": "./plugins/3-pack-design",
-      "description": "Design: impeccable, taste-skill, emil-kowalski-skills, ui-ux-pro-max",
+      "description": "Design: impeccable, taste-skill, emil-kowalski-skills, ui-ux-pro-max, made-to-stick",
       "category": "Design",
       "tags": [
         "pack"
@@ -66,7 +66,8 @@
         "impeccable",
         "taste-skill",
         "emil-kowalski-skills",
-        "ui-ux-pro-max"
+        "ui-ux-pro-max",
+        "made-to-stick"
       ]
     },
     {
@@ -449,6 +450,20 @@
       "description": "Design intelligence: searchable styles, palettes, typography and UX guidelines.",
       "strict": false,
       "category": "Design"
+    },
+    {
+      "name": "made-to-stick",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wondelai/skills.git",
+        "path": "made-to-stick"
+      },
+      "description": "Craft messages that are understood, remembered and drive action with the SUCCESs checklist",
+      "category": "Design",
+      "strict": false,
+      "skills": [
+        "./"
+      ]
     },
     {
       "name": "threejs-skills",

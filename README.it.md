@@ -56,7 +56,7 @@ Le voci sono di quattro tipi:
 |---|---|---|
 | `1-pack-fundamentals` | 12 plugin | ~1.538 |
 | `2-pack-context-memory` | 4 plugin | ~3.696 |
-| `3-pack-design` | 4 plugin | ~3.166 |
+| `3-pack-design` | 5 plugin | ~3.324 |
 | `4-pack-design-advanced` | 4 plugin | ~1.481 |
 | `5-pack-learning` | 4 plugin | ~1.648 |
 | `6-pack-research` | 4 plugin | ~1.214 |
@@ -118,6 +118,7 @@ I plugin con tag `bonus` e i due plugin dei repo interi non fanno parte di nessu
 | [`taste-skill`](https://github.com/Leonxlnx/taste-skill) | Direzione artistica per siti, pagine prodotto e dashboard (taste-skill v2) | 1 skill | ~243 |
 | [`emil-kowalski-skills`](https://github.com/emilkowalski/skills) | Le skill di Emil Kowalski per designer e ingegneri: animazioni, rifinitura UI, design engineering | 16 skill | ~1.902 |
 | [`ui-ux-pro-max`](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | Intelligenza di design: stili, palette, tipografia e linee guida UX consultabili | 7 skill | ~709 |
+| [`made-to-stick`](https://github.com/wondelai/skills/tree/HEAD/made-to-stick) | Scrivi messaggi che vengono capiti, ricordati e portano all'azione con la checklist SUCCESs | 1 skill | ~158 |
 
 ### Design Advanced
 
