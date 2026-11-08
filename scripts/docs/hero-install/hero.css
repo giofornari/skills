@@ -1,0 +1,72 @@
+/* All rules belong to this example. */
+.hi .ss-stage {
+  --gutter: 40px;
+  overflow: hidden;
+  background: #0e0e10;
+}
+
+/* Terminal pinned top-left; it runs off the bottom, the crop takes only its empty body */
+.hi-term {
+  position: absolute;
+  top: var(--gutter);
+  left: var(--gutter);
+  width: 640px;
+  height: 420px;
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.06), 0 0 0 1px rgb(255 255 255 / 0.06);
+}
+
+.hi-term__body {
+  padding: 20px 22px;
+  font-size: 14px;
+  line-height: 24px;
+  display: grid;
+  align-content: start;
+}
+
+/* The pack list straddles the terminal's right edge over its empty margin and runs off the bottom */
+.hi-packs {
+  position: absolute;
+  top: 84px;
+  left: 620px;
+  width: 300px;
+  height: 360px;
+  background: #17171a;
+}
+
+.hi-packs__title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #9a9aa3;
+  margin-bottom: 10px;
+}
+
+.hi-list {
+  display: grid;
+  gap: 2px;
+}
+
+.hi-row {
+  height: 40px;
+  border-radius: 8px;
+  padding: 0 10px;
+}
+
+.hi-swatch {
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+}
+
+.hi-name {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 500;
+}
+
+.hi-tokens {
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  line-height: 22px;
+  color: #9a9aa3;
+}

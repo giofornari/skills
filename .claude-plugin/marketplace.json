@@ -12,7 +12,7 @@
     {
       "name": "fundamentals",
       "source": "./plugins/fundamentals",
-      "description": "Essential: six skills fused from several plugins: interview, idea-to-tickets, root-cause-debug, discipline, orchestrate-agents, launch-checklist. A hook loads discipline before the first code edit.",
+      "description": "Essential: seven skills: six fused from several plugins (interview, idea-to-tickets, root-cause-debug, discipline, orchestrate-agents, launch-checklist) plus efficacia. A hook loads discipline before the first code edit.",
       "category": "Fundamentals",
       "tags": [
         "essential"

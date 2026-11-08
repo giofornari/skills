@@ -2,13 +2,9 @@
 
 **English** · [Italiano](README.it.md)
 
-A Claude Code and Claude Desktop **marketplace**: a catalog of plugins. This one holds every skill, MCP server and tool I use, sorted into 8 categories. Each category has a **pack** that installs the essentials in one step. Every plugin also installs on its own.
+The skills, MCP servers and tools I use with Claude Code and Claude Desktop, sorted into 8 packs. Install a pack in one step, or any plugin on its own. Only the `fundamentals` essential holds rewritten code; every other entry points at its upstream repo and follows its latest version.
 
-Nothing is copied here, except inside the `fundamentals` essential (see below). Every other entry points at its upstream repo and follows its latest version.
-
-## Install: you
-
-**Claude Code**
+## Install
 
 ```
 /plugin marketplace add giofornari/skills
@@ -16,58 +12,32 @@ Nothing is copied here, except inside the `fundamentals` essential (see below). 
 /plugin install 1-pack-fundamentals@giofornari
 ```
 
-`claude-mem` lives in its own marketplace, so add it before the install. Without it the pack install fails.
+![Installing a pack: the commands in a terminal, the pack list beside it](docs/hero-install.png)
 
-**Claude Desktop**: Customize > Plugins > Add marketplace > `giofornari/skills` (and `thedotmack/claude-mem`), then pick a pack.
+`claude-mem` lives in its own marketplace: add it first, or the pack install fails. Then `/reload-plugins`.
 
-Browse everything with `/plugin`. The packs are the first eight entries.
-
-## Install: an agent
-
-Tell Claude: *"Install the marketplace `giofornari/skills` and the pack `<pack>` from it."* Or run:
-
-```
-claude plugin marketplace add giofornari/skills
-claude plugin install <plugin>@giofornari      # add --scope project to install for one repo only
-claude plugin list                             # verify: <plugin>@giofornari is enabled
-```
-
-Then `/reload-plugins` or restart the session. Plugin names are in the tables below, or run `claude plugin list --available --json`. Check [Prerequisites](#prerequisites) first for `codegraph`, `awwwards-mcp`, `graphify`, `camoufox`, `agent-reach` and `openmontage`.
-
-## How it works
-
-| Path | Role |
-|---|---|
-| `.claude-plugin/marketplace.json` | The catalog and single source of truth: packs first, then plugins by category |
-| `plugins/` | Only what is mine: the 8 pack manifests, the `fundamentals` essential, `codegraph` and `awwwards-mcp` (MCP wrappers), `camoufox` (MCP server), `graphify` (setup skill) |
-| `docs/` | The images in this README |
-
-Entries come in five kinds:
-
-- **Pack**: an empty plugin whose `dependencies` are its members. Installing it installs them all. A member can live in another marketplace (`claude-mem@thedotmack`).
-- **Essential**: a local plugin whose skills are rewritten from several permissively licensed plugins (`fundamentals`). Sources and licences are in `plugins/fundamentals/NOTICE`.
-- **Plugin**: a pointer to an upstream repo.
-- **Extracted skill**: one skill pulled out of a big repo, so it costs ~20-130 tokens instead of 1,000+. The full repo stays available too (`mattpocock-skills`, `agent-skills`).
-- **Local plugin**: lives in `plugins/`.
-
-**Tokens** is what a plugin adds to every session before you use it, measured with `claude plugin details`.
-
-![Marketplace map](docs/map.png)
+- **One plugin:** `/plugin install <plugin>@giofornari`. Browse everything with `/plugin`.
+- **Claude Desktop:** Customize > Plugins > Add marketplace > `giofornari/skills` (and `thedotmack/claude-mem`), then pick a pack.
+- **From an agent:** tell Claude *"Install the marketplace `giofornari/skills` and the pack `<pack>`"*. Check [Prerequisites](#prerequisites) first for `codegraph`, `awwwards-mcp`, `graphify`, `camoufox`, `agent-reach` and `openmontage`.
 
 ## Packs
 
-| Pack | Installs | Tokens |
-|---|---|---|
-| `1-pack-fundamentals` | 8 plugins | ~3,704 |
-| `2-pack-context-memory` | 4 plugins | ~3,710 |
-| `3-pack-design` | 8 plugins | ~4,417 |
-| `4-pack-design-advanced` | 4 plugins | ~1,481 |
-| `5-pack-learning` | 4 plugins | ~1,648 |
-| `6-pack-research` | 4 plugins | ~1,214 |
-| `7-pack-content-creation` | 4 plugins | ~8,578 |
-| `8-pack-marketing-strategy` | 6 plugins | ~25,686 |
+![Marketplace map](docs/map.png)
 
-Plugins tagged `bonus`, the two full-repo plugins and the plugins that left the Fundamentals pack belong to no pack.
+| Pack | For | Plugins | Tokens |
+|---|---|---|---|
+| `1-pack-fundamentals` | Working method, planning, debugging, code intelligence | 8 | ~3,704 |
+| `2-pack-context-memory` | Memory across sessions, lighter context | 4 | ~3,710 |
+| `3-pack-design` | Interface design, taste, copy that sticks | 8 | ~4,417 |
+| `4-pack-design-advanced` | 3D, UX heuristics, design review | 4 | ~1,481 |
+| `5-pack-learning` | Understand codebases, make slides and diagrams | 4 | ~1,648 |
+| `6-pack-research` | Web search, scraping, browsing | 4 | ~1,214 |
+| `7-pack-content-creation` | Video, motion graphics, platform content | 4 | ~8,578 |
+| `8-pack-marketing-strategy` | SEO, conversion, sales, marketing | 6 | ~25,686 |
+
+**Tokens** is what a pack or plugin adds to every session before you use it, measured with `claude plugin details`. Plugins tagged `bonus`, the two full-repo plugins and the plugins that left the Fundamentals pack belong to no pack.
+
+An entry is a **pack** (an empty plugin whose `dependencies` are its members), the **essential** `fundamentals` (skills rewritten from permissively licensed plugins; sources in `plugins/fundamentals/NOTICE`), a **plugin** (a pointer to an upstream repo), an **extracted skill** (one skill from a big repo, ~20-130 tokens instead of 1,000+) or a **local plugin** (in `plugins/`). The catalog is `.claude-plugin/marketplace.json`, the single source of truth.
 
 ## Plugins
 
@@ -77,7 +47,7 @@ Plugins tagged `bonus`, the two full-repo plugins and the plugins that left the 
 
 | Plugin | What it does | Loads | Tokens |
 |---|---|---|---|
-| [`fundamentals`](./plugins/fundamentals) | Essential: six skills fused from several plugins: interview, idea-to-tickets, root-cause-debug, discipline, orchestrate-agents, launch-checklist. A hook loads discipline before the first code edit | 6 skills + hook | ~157 |
+| [`fundamentals`](./plugins/fundamentals) | Essential: seven skills: six fused from several plugins (interview, idea-to-tickets, root-cause-debug, discipline, orchestrate-agents, launch-checklist) plus efficacia. A hook loads discipline before the first code edit | 7 skills + hook | ~190 |
 | [`superpowers`](https://github.com/obra/superpowers) | Agentic skills framework and development methodology: brainstorming, plans, TDD, debugging, review | 15 skills | ~706 |
 | [`ponytail`](https://github.com/DietrichGebert/ponytail) | Makes the agent think like the laziest senior dev: minimal, no over-engineering | 6 skills | ~430 |
 | [`codegraph`](./plugins/codegraph) | CodeGraph MCP: code-intelligence knowledge graph (symbols, callers, impact). Needs the CLI installed: npm install -g @colbymchenry/codegraph | MCP | ~0 |
