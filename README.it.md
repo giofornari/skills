@@ -58,7 +58,7 @@ Le voci sono di cinque tipi:
 
 | Pack | Installa | Token |
 |---|---|---|
-| `1-pack-fundamentals` | 7 plugin | ~3.542 |
+| `1-pack-fundamentals` | 8 plugin | ~3.704 |
 | `2-pack-context-memory` | 4 plugin | ~3.710 |
 | `3-pack-design` | 6 plugin | ~3.484 |
 | `4-pack-design-advanced` | 4 plugin | ~1.481 |
@@ -83,6 +83,7 @@ I plugin con tag `bonus`, i due plugin dei repo interi e i plugin usciti dal pac
 | [`codegraph`](./plugins/codegraph) | CodeGraph MCP: grafo di conoscenza del codice (simboli, chiamanti, impatto). Richiede la CLI installata: npm install -g @colbymchenry/codegraph | MCP | ~0 |
 | [`humanizer`](https://github.com/blader/humanizer) | Toglie dal testo i segni di scrittura generata dall'AI | 1 skill | ~90 |
 | [`teach`](https://github.com/mattpocock/skills/tree/HEAD/skills/productivity/teach) | Insegna all'utente una nuova abilità o un concetto, dentro questo workspace | 1 skill | ~18 |
+| [`be-ambitious`](https://github.com/robonuggets/be-ambitious) | Alza il livello di un compito o di un prompt con altitudine, profondità e raggio di Felix Rieseberg, poi fa il lavoro | 1 skill | ~162 |
 
 Nel pack c'è anche `claude-mem`. Viene dal suo marketplace (`thedotmack`), elencato in Context & Memory.
 

@@ -58,7 +58,7 @@ Entries come in five kinds:
 
 | Pack | Installs | Tokens |
 |---|---|---|
-| `1-pack-fundamentals` | 7 plugins | ~3,542 |
+| `1-pack-fundamentals` | 8 plugins | ~3,704 |
 | `2-pack-context-memory` | 4 plugins | ~3,710 |
 | `3-pack-design` | 6 plugins | ~3,484 |
 | `4-pack-design-advanced` | 4 plugins | ~1,481 |
@@ -83,6 +83,7 @@ Plugins tagged `bonus`, the two full-repo plugins and the plugins that left the 
 | [`codegraph`](./plugins/codegraph) | CodeGraph MCP: code-intelligence knowledge graph (symbols, callers, impact). Needs the CLI installed: npm install -g @colbymchenry/codegraph | MCP | ~0 |
 | [`humanizer`](https://github.com/blader/humanizer) | Removes signs of AI-generated writing from text | 1 skill | ~90 |
 | [`teach`](https://github.com/mattpocock/skills/tree/HEAD/skills/productivity/teach) | Teach the user a new skill or concept, within this workspace | 1 skill | ~18 |
+| [`be-ambitious`](https://github.com/robonuggets/be-ambitious) | Aim a task or prompt higher with Felix Rieseberg's altitude, depth and range, then do the work | 1 skill | ~162 |
 
 `claude-mem` is also in this pack. It comes from its own marketplace (`thedotmack`), listed under Context & Memory.
 

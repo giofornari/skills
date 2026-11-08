@@ -21,7 +21,7 @@
     {
       "name": "1-pack-fundamentals",
       "source": "./plugins/1-pack-fundamentals",
-      "description": "Fundamentals: fundamentals, superpowers, ponytail, claude-mem, codegraph, humanizer, teach",
+      "description": "Fundamentals: fundamentals, superpowers, ponytail, claude-mem, codegraph, humanizer, teach, be-ambitious",
       "category": "Fundamentals",
       "tags": [
         "pack"
@@ -33,7 +33,8 @@
         "claude-mem@thedotmack",
         "codegraph",
         "humanizer",
-        "teach"
+        "teach",
+        "be-ambitious"
       ]
     },
     {
@@ -237,6 +238,19 @@
         "path": "skills/productivity/teach"
       },
       "description": "Teach the user a new skill or concept, within this workspace",
+      "category": "Fundamentals",
+      "strict": false,
+      "skills": [
+        "./"
+      ]
+    },
+    {
+      "name": "be-ambitious",
+      "source": {
+        "source": "github",
+        "repo": "robonuggets/be-ambitious"
+      },
+      "description": "Aim a task or prompt higher with Felix Rieseberg's altitude, depth and range, then do the work",
       "category": "Fundamentals",
       "strict": false,
       "skills": [
