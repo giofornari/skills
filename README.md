@@ -4,7 +4,7 @@
 
 A Claude Code and Claude Desktop **marketplace**: a catalog of plugins. This one holds every skill, MCP server and tool I use, sorted into 8 categories. Each category has a **pack** that installs the essentials in one step. Every plugin also installs on its own.
 
-Nothing is copied here. Each entry points at its upstream repo and follows its latest version.
+Nothing is copied here, except inside the `fundamentals` essential (see below). Every other entry points at its upstream repo and follows its latest version.
 
 ## Install: you
 
@@ -16,7 +16,9 @@ Nothing is copied here. Each entry points at its upstream repo and follows its l
 /plugin install 1-pack-fundamentals@giofornari
 ```
 
-**Claude Desktop**: Customize > Plugins > Add marketplace > `giofornari/skills`, then pick a pack.
+`claude-mem` lives in its own marketplace, so add it before the install. Without it the pack install fails.
+
+**Claude Desktop**: Customize > Plugins > Add marketplace > `giofornari/skills` (and `thedotmack/claude-mem`), then pick a pack.
 
 Browse everything with `/plugin`. The packs are the first eight entries.
 
@@ -30,19 +32,20 @@ claude plugin install <plugin>@giofornari      # add --scope project to install 
 claude plugin list                             # verify: <plugin>@giofornari is enabled
 ```
 
-Then `/reload-plugins` or restart the session. Plugin names are in the tables below, or run `claude plugin list --available --json`. Check [Prerequisites](#prerequisites) first for `graphify`, `camoufox`, `agent-reach` and `openmontage`.
+Then `/reload-plugins` or restart the session. Plugin names are in the tables below, or run `claude plugin list --available --json`. Check [Prerequisites](#prerequisites) first for `codegraph`, `graphify`, `camoufox`, `agent-reach` and `openmontage`.
 
 ## How it works
 
 | Path | Role |
 |---|---|
 | `.claude-plugin/marketplace.json` | The catalog and single source of truth: packs first, then plugins by category |
-| `plugins/` | Only what is mine: the 8 pack manifests, `camoufox` (MCP server), `graphify` (setup skill) |
+| `plugins/` | Only what is mine: the 8 pack manifests, the `fundamentals` essential, `codegraph` (MCP wrapper), `camoufox` (MCP server), `graphify` (setup skill) |
 | `docs/` | The images in this README |
 
-Entries come in four kinds:
+Entries come in five kinds:
 
-- **Pack**: an empty plugin whose `dependencies` are its members. Installing it installs them all.
+- **Pack**: an empty plugin whose `dependencies` are its members. Installing it installs them all. A member can live in another marketplace (`claude-mem@thedotmack`).
+- **Essential**: a local plugin whose skills are rewritten from several permissively licensed plugins (`fundamentals`). Sources and licences are in `plugins/fundamentals/NOTICE`.
 - **Plugin**: a pointer to an upstream repo.
 - **Extracted skill**: one skill pulled out of a big repo, so it costs ~20-130 tokens instead of 1,000+. The full repo stays available too (`mattpocock-skills`, `agent-skills`).
 - **Local plugin**: lives in `plugins/`.
@@ -55,8 +58,8 @@ Entries come in four kinds:
 
 | Pack | Installs | Tokens |
 |---|---|---|
-| `1-pack-fundamentals` | 12 plugins | ~1,538 |
-| `2-pack-context-memory` | 4 plugins | ~3,696 |
+| `1-pack-fundamentals` | 7 plugins | ~3,542 |
+| `2-pack-context-memory` | 4 plugins | ~3,710 |
 | `3-pack-design` | 6 plugins | ~3,484 |
 | `4-pack-design-advanced` | 4 plugins | ~1,481 |
 | `5-pack-learning` | 4 plugins | ~1,648 |
@@ -64,7 +67,7 @@ Entries come in four kinds:
 | `7-pack-content-creation` | 4 plugins | ~8,578 |
 | `8-pack-marketing-strategy` | 6 plugins | ~25,686 |
 
-Plugins tagged `bonus` and the two full-repo plugins belong to no pack.
+Plugins tagged `bonus`, the two full-repo plugins and the plugins that left the Fundamentals pack belong to no pack.
 
 ## Plugins
 
@@ -74,24 +77,28 @@ Plugins tagged `bonus` and the two full-repo plugins belong to no pack.
 
 | Plugin | What it does | Loads | Tokens |
 |---|---|---|---|
+| [`fundamentals`](./plugins/fundamentals) | Essential: six skills fused from several plugins: interview, idea-to-tickets, root-cause-debug, discipline, orchestrate-agents, launch-checklist. A hook loads discipline before the first code edit | 6 skills + hook | ~157 |
 | [`superpowers`](https://github.com/obra/superpowers) | Agentic skills framework and development methodology: brainstorming, plans, TDD, debugging, review | 15 skills | ~706 |
-| [`andrej-karpathy-skills`](https://github.com/multica-ai/andrej-karpathy-skills) | One CLAUDE.md of guidelines derived from Karpathy's notes on LLM coding pitfalls | 1 skill | ~66 |
-| [`humanizer`](https://github.com/blader/humanizer) | Removes signs of AI-generated writing from text | 1 skill | ~90 |
 | [`ponytail`](https://github.com/DietrichGebert/ponytail) | Makes the agent think like the laziest senior dev: minimal, no over-engineering | 6 skills | ~430 |
+| [`codegraph`](./plugins/codegraph) | CodeGraph MCP: code-intelligence knowledge graph (symbols, callers, impact). Needs the CLI installed: npm install -g @colbymchenry/codegraph | MCP | ~0 |
+| [`humanizer`](https://github.com/blader/humanizer) | Removes signs of AI-generated writing from text | 1 skill | ~90 |
+| [`teach`](https://github.com/mattpocock/skills/tree/HEAD/skills/productivity/teach) | Teach the user a new skill or concept, within this workspace | 1 skill | ~18 |
+
+`claude-mem` is also in this pack. It comes from its own marketplace (`thedotmack`), listed under Context & Memory.
+
+**Also available** (not in the pack, install one by one). The first eight left the pack when `fundamentals` came in:
+
+| Plugin | What it does | Loads | Tokens |
+|---|---|---|---|
+| [`andrej-karpathy-skills`](https://github.com/multica-ai/andrej-karpathy-skills) | One CLAUDE.md of guidelines derived from Karpathy's notes on LLM coding pitfalls | 1 skill | ~66 |
 | [`grill-me`](https://github.com/mattpocock/skills/tree/HEAD/skills/productivity/grill-me) | A relentless interview to sharpen a plan or design | 1 skill | ~17 |
 | [`grill-with-docs`](https://github.com/mattpocock/skills/tree/HEAD/skills/engineering/grill-with-docs) | A relentless interview to sharpen a plan or design, which also creates docs (ADR's and glossary) as we go | 1 skill | ~35 |
 | [`grilling`](https://github.com/mattpocock/skills/tree/HEAD/skills/productivity/grilling) | Grill the user relentlessly about a plan, decision, or idea | 1 skill | ~43 |
-| [`teach`](https://github.com/mattpocock/skills/tree/HEAD/skills/productivity/teach) | Teach the user a new skill or concept, within this workspace | 1 skill | ~18 |
 | [`improve-codebase-architecture`](https://github.com/mattpocock/skills/tree/HEAD/skills/engineering/improve-codebase-architecture) | Scan a codebase for deepening opportunities, present them as a visual HTML report, then grill through whichever one you pick | 1 skill | ~46 |
 | [`triage`](https://github.com/mattpocock/skills/tree/HEAD/skills/engineering/triage) | Move issues and external PRs through a state machine of triage roles, categorise, verify, grill if needed, and write agent-ready briefs | 1 skill | ~38 |
 | [`retro`](https://github.com/mattpocock/skills/tree/HEAD/skills/engineering/retro) | Conduct a retrospective on a coding session | 1 skill | ~14 |
 | [`writing-for-agents`](https://github.com/mattpocock/skills/tree/HEAD/skills/productivity/writing-for-agents) | Writing documents for agents | 1 skill | ~35 |
-
-**Also available** (not in the pack, install one by one):
-
-| Plugin | What it does | Loads | Tokens |
-|---|---|---|---|
-| [`mattpocock-skills`](https://github.com/mattpocock/skills) | The whole mattpocock/skills repo. The pack installs the extracted skills only | 27 skills | ~1,169 |
+| [`mattpocock-skills`](https://github.com/mattpocock/skills) | The whole mattpocock/skills repo | 27 skills | ~1,169 |
 | [`interview-me`](https://github.com/addyosmani/agent-skills/tree/HEAD/skills/interview-me) | Extracts what the user actually wants instead of what they think they should want | 1 skill | ~128 |
 | [`idea-refine`](https://github.com/addyosmani/agent-skills/tree/HEAD/skills/idea-refine) | Refines raw ideas into sharp, actionable concepts through structured divergent and convergent thinking | 1 skill | ~90 |
 | [`debugging-and-error-recovery`](https://github.com/addyosmani/agent-skills/tree/HEAD/skills/debugging-and-error-recovery) | Guides systematic root-cause debugging | 1 skill | ~95 |
@@ -105,7 +112,7 @@ Plugins tagged `bonus` and the two full-repo plugins belong to no pack.
 | Plugin | What it does | Loads | Tokens |
 |---|---|---|---|
 | [`honcho`](https://www.npmjs.com/package/@honcho-ai/claude-honcho) | Persistent memory for Claude Code sessions using Honcho | 7 skills + MCP | ~167 |
-| [`claude-mem`](https://github.com/thedotmack/claude-mem/tree/HEAD/plugin) | claude-mem by thedotmack: captures, compresses and re-injects what the agent did across sessions | 30 skills + MCP | ~2,127 |
+| [`claude-mem`](https://github.com/thedotmack/claude-mem/tree/HEAD/plugin) | claude-mem by thedotmack: captures, compresses and re-injects what the agent did across sessions | 30 skills + MCP | ~2,141 |
 | [`caveman`](https://github.com/JuliusBrussee/caveman) | Terse output mode and token-saving tooling | 23 skills | ~1,366 |
 | [`graphify`](./plugins/graphify) | Sets up Graphify, the codebase knowledge-graph CLI, through its official installer | 1 skill | ~36 |
 
@@ -196,6 +203,9 @@ Plugins tagged `bonus` and the two full-repo plugins belong to no pack.
 
 ## Prerequisites
 
+- `codegraph`: needs its CLI, `npm install -g @colbymchenry/codegraph`. The plugin only registers the MCP server.
+- `fundamentals`: the hook that loads `discipline` before the first code edit needs `python3` on the PATH. Without it the hook does nothing and the skill still works when invoked.
+- `claude-mem`: add its marketplace first, `/plugin marketplace add thedotmack/claude-mem`.
 - `graphify`: needs `uv`. Its skill installs the CLI through Graphify's own installer.
 - `camoufox`: needs `uv`. Fetch the browser once with `uvx camoufox fetch`.
 - `agent-reach`: install the CLI from [its install guide](https://raw.githubusercontent.com/Panniantong/Agent-Reach/main/docs/install.md). The PyPI package with the same name is a different project.
@@ -226,4 +236,4 @@ No source is pinned and no manifest sets a `version`, so every upstream release 
 
 ## Licenses
 
-Each plugin keeps its upstream license and authors. `openmontage` is AGPL-3.0, `education-agent-skills` is CC BY-SA 4.0 and `andrej-karpathy-skills` declares none. `remotion` is MIT as a plugin, but the Remotion framework has its own license: free for individuals and small teams, paid for larger companies. The original content here (manifests, `camoufox` server, `graphify` skill) is MIT.
+Each plugin keeps its upstream license and authors. `openmontage` is AGPL-3.0, `education-agent-skills` is CC BY-SA 4.0 and `andrej-karpathy-skills` declares none. `remotion` is MIT as a plugin, but the Remotion framework has its own license: free for individuals and small teams, paid for larger companies. The original content here (manifests, `camoufox` server, `graphify` skill, `codegraph` wrapper) is MIT. `fundamentals` is MIT too; its skills are rewritten from MIT donors, and `plugins/fundamentals/NOTICE` names each one. One donor, `andrej-karpathy-skills`, ships no LICENSE file and only declares MIT.

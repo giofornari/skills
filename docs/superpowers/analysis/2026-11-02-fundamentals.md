@@ -124,6 +124,7 @@ Measured 2026-11-02 with `claude --plugin-dir plugins/fundamentals plugin detail
 | launch-checklist | 40 | 1600 | 4200 (shipping-and-launch) | yes |
 
 Essential always-on: **259**. Bound (spec §6.3a, "somma dei soli plugin donatori usciti dal pack"): the plugins whose skills were fused and that left the pack, grill-me 34 + grill-with-docs 60 + grilling 70 + andrej-karpathy-skills 105 = **269**. `improve-codebase-architecture` (68) no longer counts: its skill was dropped, not fused. 259 is below it, by 10.
+- The README figures are measured on the installed plugin (`claude plugin details <name>@giofornari`), about 40% lower than `--plugin-dir` for the same plugin: fundamentals 157, superpowers 706, claude-mem 2141, so the README pack total is 3542. The bound holds on that method too: 157 against grill-me 17 + grill-with-docs 35 + grilling 43 + andrej-karpathy-skills 66 = 161.
 - The first build measured 458 (descriptions of 17-23 words, ~50-60 each) and failed this bound; the review caught a wider reading (486, counting retro, writing-for-agents and triage, which fused nothing) that does not follow the spec. The fix shortened each description to one clause (8-14 words, ~40 each), which keeps the `Not for:` sibling.
 - The trade: shorter descriptions give the model less to match on when deciding to invoke a skill. Each still names its job.
 

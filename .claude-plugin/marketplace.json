@@ -12,7 +12,7 @@
     {
       "name": "fundamentals",
       "source": "./plugins/fundamentals",
-      "description": "Fundamentals essential: six skills fused from several plugins. Sharpen intent, plan to tickets, root-cause debug, discipline, orchestrate agents, launch checklist.",
+      "description": "Essential: six skills fused from several plugins: interview, idea-to-tickets, root-cause-debug, discipline, orchestrate-agents, launch-checklist. A hook loads discipline before the first code edit.",
       "category": "Fundamentals",
       "tags": [
         "essential"
@@ -305,7 +305,7 @@
         "source": "github",
         "repo": "mattpocock/skills"
       },
-      "description": "The whole mattpocock/skills repo. The pack installs the extracted skills only.",
+      "description": "The whole mattpocock/skills repo.",
       "tags": [
         "full-repo"
       ],
