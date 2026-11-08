@@ -32,14 +32,14 @@ claude plugin install <plugin>@giofornari      # aggiungi --scope project per in
 claude plugin list                             # verifica: <plugin>@giofornari risulta abilitato
 ```
 
-Poi `/reload-plugins` o riavvia la sessione. I nomi dei plugin sono nelle tabelle qui sotto, oppure `claude plugin list --available --json`. Prima leggi i [Prerequisiti](#prerequisiti) per `codegraph`, `graphify`, `camoufox`, `agent-reach` e `openmontage`.
+Poi `/reload-plugins` o riavvia la sessione. I nomi dei plugin sono nelle tabelle qui sotto, oppure `claude plugin list --available --json`. Prima leggi i [Prerequisiti](#prerequisiti) per `codegraph`, `awwwards-mcp`, `graphify`, `camoufox`, `agent-reach` e `openmontage`.
 
 ## Come funziona
 
 | Percorso | Ruolo |
 |---|---|
 | `.claude-plugin/marketplace.json` | Il catalogo e unica fonte di verità: prima i pack, poi i plugin per categoria |
-| `plugins/` | Solo ciò che è mio: gli 8 manifest dei pack, l'essenziale `fundamentals`, `codegraph` (wrapper MCP), `camoufox` (server MCP), `graphify` (skill di setup) |
+| `plugins/` | Solo ciò che è mio: gli 8 manifest dei pack, l'essenziale `fundamentals`, `codegraph` e `awwwards-mcp` (wrapper MCP), `camoufox` (server MCP), `graphify` (skill di setup) |
 | `docs/` | Le immagini di questo README |
 
 Le voci sono di cinque tipi:
@@ -60,7 +60,7 @@ Le voci sono di cinque tipi:
 |---|---|---|
 | `1-pack-fundamentals` | 8 plugin | ~3.704 |
 | `2-pack-context-memory` | 4 plugin | ~3.710 |
-| `3-pack-design` | 6 plugin | ~3.484 |
+| `3-pack-design` | 8 plugin | ~4.417 |
 | `4-pack-design-advanced` | 4 plugin | ~1.481 |
 | `5-pack-learning` | 4 plugin | ~1.648 |
 | `6-pack-research` | 4 plugin | ~1.214 |
@@ -129,6 +129,8 @@ Nel pack c'è anche `claude-mem`. Viene dal suo marketplace (`thedotmack`), elen
 | [`ui-ux-pro-max`](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | Intelligenza di design: stili, palette, tipografia e linee guida UX consultabili | 7 skill | ~709 |
 | [`made-to-stick`](https://github.com/wondelai/skills/tree/HEAD/made-to-stick) | Scrivi messaggi che vengono capiti, ricordati e portano all'azione con la checklist SUCCESs | 1 skill | ~158 |
 | [`benjitaylor-skills`](https://github.com/benjitaylor/skills) | Stageshow: interfacce di prodotto finte ma credibili, come immagini fisse, card di funzionalità, demo con cursore e bento grid, in React | 1 skill | ~160 |
+| [`awwwards-mcp`](./plugins/awwwards-mcp) | Awwwards MCP: ispirazione di design dai siti premiati, con screenshot reali, DNA del design e catture dal vivo | MCP | ~0 |
+| [`awwwards-skills`](https://github.com/INSANE0777/awwwards-skills) | Skill per awwwards-mcp: ricreare un sito, studio del movimento, ciclo per sezioni, DESIGN.md, setup e riparazione | 8 skill | ~933 |
 
 ### Design Advanced
 
@@ -205,6 +207,7 @@ Nel pack c'è anche `claude-mem`. Viene dal suo marketplace (`thedotmack`), elen
 ## Prerequisiti
 
 - `codegraph`: serve la sua CLI, `npm install -g @colbymchenry/codegraph`. Il plugin registra solo il server MCP.
+- `awwwards-mcp`: serve Node 22.13+. Il plugin esegue `npx -y awwwards-mcp`, che copre gli strumenti di ricerca e analisi. Gli strumenti di cattura e registrazione richiedono anche Playwright e ffmpeg-static installati globalmente; la skill `awwwards-setup` ti guida.
 - `fundamentals`: l'hook che carica `discipline` prima della prima modifica al codice richiede `python3` nel PATH. Senza, l'hook non fa nulla e la skill funziona comunque quando la invochi.
 - `claude-mem`: aggiungi prima il suo marketplace, `/plugin marketplace add thedotmack/claude-mem`.
 - `graphify`: serve `uv`. La sua skill installa la CLI con l'installer di Graphify.
@@ -237,4 +240,4 @@ Nessuna sorgente è bloccata e nessun manifest imposta una `version`, quindi ogn
 
 ## Licenze
 
-Ogni plugin mantiene la licenza e gli autori originali. `openmontage` è AGPL-3.0, `education-agent-skills` è CC BY-SA 4.0 e `andrej-karpathy-skills` non ne dichiara una. `remotion` è MIT come plugin, ma il framework Remotion ha una licenza propria: gratis per singoli e piccoli team, a pagamento per le aziende più grandi. Il contenuto originale di questo repo (manifest, server `camoufox`, skill `graphify`, wrapper `codegraph`) è MIT. Anche `fundamentals` è MIT; le sue skill sono riscritte da donatori MIT e `plugins/fundamentals/NOTICE` li nomina uno per uno. Un donatore, `andrej-karpathy-skills`, non ha un file LICENSE e dichiara solo MIT.
+Ogni plugin mantiene la licenza e gli autori originali. `openmontage` è AGPL-3.0, `education-agent-skills` è CC BY-SA 4.0 e `andrej-karpathy-skills` non ne dichiara una. `remotion` è MIT come plugin, ma il framework Remotion ha una licenza propria: gratis per singoli e piccoli team, a pagamento per le aziende più grandi. Il contenuto originale di questo repo (manifest, server `camoufox`, skill `graphify`, wrapper `codegraph` e `awwwards-mcp`) è MIT. Anche `fundamentals` è MIT; le sue skill sono riscritte da donatori MIT e `plugins/fundamentals/NOTICE` li nomina uno per uno. Un donatore, `andrej-karpathy-skills`, non ha un file LICENSE e dichiara solo MIT.

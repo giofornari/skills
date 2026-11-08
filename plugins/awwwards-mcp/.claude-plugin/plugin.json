@@ -1,0 +1,14 @@
+{
+  "name": "awwwards-mcp",
+  "description": "Awwwards MCP: design inspiration from award-winning sites (search with screenshots, design DNA, live captures). Needs Node 22.13+. Capture and record tools also need Playwright and ffmpeg-static installed globally.",
+  "author": {
+    "name": "giofornari",
+    "url": "https://github.com/giofornari"
+  },
+  "mcpServers": {
+    "awwwards": {
+      "command": "npx",
+      "args": ["-y", "awwwards-mcp"]
+    }
+  }
+}

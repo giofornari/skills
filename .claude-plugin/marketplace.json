@@ -61,7 +61,7 @@
     {
       "name": "3-pack-design",
       "source": "./plugins/3-pack-design",
-      "description": "Design: impeccable, taste-skill, emil-kowalski-skills, ui-ux-pro-max, made-to-stick, benjitaylor-skills",
+      "description": "Design: impeccable, taste-skill, emil-kowalski-skills, ui-ux-pro-max, made-to-stick, benjitaylor-skills, awwwards-mcp, awwwards-skills",
       "category": "Design",
       "tags": [
         "pack"
@@ -72,7 +72,9 @@
         "emil-kowalski-skills",
         "ui-ux-pro-max",
         "made-to-stick",
-        "benjitaylor-skills"
+        "benjitaylor-skills",
+        "awwwards-mcp",
+        "awwwards-skills"
       ]
     },
     {
@@ -484,6 +486,25 @@
       "strict": false,
       "skills": [
         "./stageshow"
+      ]
+    },
+    {
+      "name": "awwwards-mcp",
+      "source": "./plugins/awwwards-mcp",
+      "description": "Awwwards MCP: design inspiration from award-winning sites, with real screenshots, design DNA and live captures.",
+      "category": "Design"
+    },
+    {
+      "name": "awwwards-skills",
+      "source": {
+        "source": "github",
+        "repo": "INSANE0777/awwwards-skills"
+      },
+      "description": "Skills for awwwards-mcp: recreate a site, motion study, section loop, DESIGN.md, setup and repair",
+      "category": "Design",
+      "strict": false,
+      "skills": [
+        "./skills"
       ]
     },
     {

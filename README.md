@@ -32,14 +32,14 @@ claude plugin install <plugin>@giofornari      # add --scope project to install 
 claude plugin list                             # verify: <plugin>@giofornari is enabled
 ```
 
-Then `/reload-plugins` or restart the session. Plugin names are in the tables below, or run `claude plugin list --available --json`. Check [Prerequisites](#prerequisites) first for `codegraph`, `graphify`, `camoufox`, `agent-reach` and `openmontage`.
+Then `/reload-plugins` or restart the session. Plugin names are in the tables below, or run `claude plugin list --available --json`. Check [Prerequisites](#prerequisites) first for `codegraph`, `awwwards-mcp`, `graphify`, `camoufox`, `agent-reach` and `openmontage`.
 
 ## How it works
 
 | Path | Role |
 |---|---|
 | `.claude-plugin/marketplace.json` | The catalog and single source of truth: packs first, then plugins by category |
-| `plugins/` | Only what is mine: the 8 pack manifests, the `fundamentals` essential, `codegraph` (MCP wrapper), `camoufox` (MCP server), `graphify` (setup skill) |
+| `plugins/` | Only what is mine: the 8 pack manifests, the `fundamentals` essential, `codegraph` and `awwwards-mcp` (MCP wrappers), `camoufox` (MCP server), `graphify` (setup skill) |
 | `docs/` | The images in this README |
 
 Entries come in five kinds:
@@ -60,7 +60,7 @@ Entries come in five kinds:
 |---|---|---|
 | `1-pack-fundamentals` | 8 plugins | ~3,704 |
 | `2-pack-context-memory` | 4 plugins | ~3,710 |
-| `3-pack-design` | 6 plugins | ~3,484 |
+| `3-pack-design` | 8 plugins | ~4,417 |
 | `4-pack-design-advanced` | 4 plugins | ~1,481 |
 | `5-pack-learning` | 4 plugins | ~1,648 |
 | `6-pack-research` | 4 plugins | ~1,214 |
@@ -129,6 +129,8 @@ Plugins tagged `bonus`, the two full-repo plugins and the plugins that left the 
 | [`ui-ux-pro-max`](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | Design intelligence: searchable styles, palettes, typography and UX guidelines | 7 skills | ~709 |
 | [`made-to-stick`](https://github.com/wondelai/skills/tree/HEAD/made-to-stick) | Craft messages that are understood, remembered and drive action with the SUCCESs checklist | 1 skill | ~158 |
 | [`benjitaylor-skills`](https://github.com/benjitaylor/skills) | Stageshow: faux product UI as stills, feature cards, cursor demos and bento grids, built in React | 1 skill | ~160 |
+| [`awwwards-mcp`](./plugins/awwwards-mcp) | Awwwards MCP: design inspiration from award-winning sites, with real screenshots, design DNA and live captures | MCP | ~0 |
+| [`awwwards-skills`](https://github.com/INSANE0777/awwwards-skills) | Skills for awwwards-mcp: recreate a site, motion study, section loop, DESIGN.md, setup and repair | 8 skills | ~933 |
 
 ### Design Advanced
 
@@ -205,6 +207,7 @@ Plugins tagged `bonus`, the two full-repo plugins and the plugins that left the 
 ## Prerequisites
 
 - `codegraph`: needs its CLI, `npm install -g @colbymchenry/codegraph`. The plugin only registers the MCP server.
+- `awwwards-mcp`: needs Node 22.13+. The plugin runs `npx -y awwwards-mcp`, which covers the search and analysis tools. The capture and record tools also need Playwright and ffmpeg-static installed globally; the `awwwards-setup` skill walks through it.
 - `fundamentals`: the hook that loads `discipline` before the first code edit needs `python3` on the PATH. Without it the hook does nothing and the skill still works when invoked.
 - `claude-mem`: add its marketplace first, `/plugin marketplace add thedotmack/claude-mem`.
 - `graphify`: needs `uv`. Its skill installs the CLI through Graphify's own installer.
@@ -237,4 +240,4 @@ No source is pinned and no manifest sets a `version`, so every upstream release 
 
 ## Licenses
 
-Each plugin keeps its upstream license and authors. `openmontage` is AGPL-3.0, `education-agent-skills` is CC BY-SA 4.0 and `andrej-karpathy-skills` declares none. `remotion` is MIT as a plugin, but the Remotion framework has its own license: free for individuals and small teams, paid for larger companies. The original content here (manifests, `camoufox` server, `graphify` skill, `codegraph` wrapper) is MIT. `fundamentals` is MIT too; its skills are rewritten from MIT donors, and `plugins/fundamentals/NOTICE` names each one. One donor, `andrej-karpathy-skills`, ships no LICENSE file and only declares MIT.
+Each plugin keeps its upstream license and authors. `openmontage` is AGPL-3.0, `education-agent-skills` is CC BY-SA 4.0 and `andrej-karpathy-skills` declares none. `remotion` is MIT as a plugin, but the Remotion framework has its own license: free for individuals and small teams, paid for larger companies. The original content here (manifests, `camoufox` server, `graphify` skill, `codegraph` and `awwwards-mcp` wrappers) is MIT. `fundamentals` is MIT too; its skills are rewritten from MIT donors, and `plugins/fundamentals/NOTICE` names each one. One donor, `andrej-karpathy-skills`, ships no LICENSE file and only declares MIT.
