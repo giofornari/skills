@@ -12,8 +12,6 @@ The skills, MCP servers and tools I use with Claude Code and Claude Desktop, sor
 /plugin install 1-pack-fundamentals@giofornari
 ```
 
-![Installing a pack: the commands in a terminal, the pack list beside it](docs/hero-install.png)
-
 `claude-mem` lives in its own marketplace: add it first, or the pack install fails. Then `/reload-plugins`.
 
 - **One plugin:** `/plugin install <plugin>@giofornari`. Browse everything with `/plugin`.
@@ -24,20 +22,26 @@ The skills, MCP servers and tools I use with Claude Code and Claude Desktop, sor
 
 ![Marketplace map](docs/map.png)
 
-| Pack | For | Plugins | Tokens |
-|---|---|---|---|
-| `1-pack-fundamentals` | Working method, planning, debugging, code intelligence | 8 | ~3,704 |
-| `2-pack-context-memory` | Memory across sessions, lighter context | 4 | ~3,710 |
-| `3-pack-design` | Interface design, taste, copy that sticks | 8 | ~4,417 |
-| `4-pack-design-advanced` | 3D, UX heuristics, design review | 4 | ~1,481 |
-| `5-pack-learning` | Understand codebases, make slides and diagrams | 4 | ~1,648 |
-| `6-pack-research` | Web search, scraping, browsing | 4 | ~1,214 |
-| `7-pack-content-creation` | Video, motion graphics, platform content | 4 | ~8,578 |
-| `8-pack-marketing-strategy` | SEO, conversion, sales, marketing | 6 | ~25,686 |
+| Pack | For | Tokens |
+|---|---|---:|
+| `1-pack-fundamentals` | Working method, planning, debugging, code intelligence | ~3,704 |
+| `2-pack-context-memory` | Memory across sessions, lighter context | ~3,710 |
+| `3-pack-design` | Interface design, taste, copy that sticks | ~4,417 |
+| `4-pack-design-advanced` | 3D, UX heuristics, design review | ~1,481 |
+| `5-pack-learning` | Understand codebases, make slides and diagrams | ~1,648 |
+| `6-pack-research` | Web search, scraping, browsing | ~1,214 |
+| `7-pack-content-creation` | Video, motion graphics, platform content | ~8,578 |
+| `8-pack-marketing-strategy` | SEO, conversion, sales, marketing | ~25,686 |
 
 **Tokens** is what a pack or plugin adds to every session before you use it, measured with `claude plugin details`. Plugins tagged `bonus`, the two full-repo plugins and the plugins that left the Fundamentals pack belong to no pack.
 
+
+<details>
+<summary>How the catalog is built</summary>
+
 An entry is a **pack** (an empty plugin whose `dependencies` are its members), the **essential** `fundamentals` (skills rewritten from permissively licensed plugins; sources in `plugins/fundamentals/NOTICE`), a **plugin** (a pointer to an upstream repo), an **extracted skill** (one skill from a big repo, ~20-130 tokens instead of 1,000+) or a **local plugin** (in `plugins/`). The catalog is `.claude-plugin/marketplace.json`, the single source of truth.
+
+</details>
 
 ## Plugins
 

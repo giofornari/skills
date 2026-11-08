@@ -12,8 +12,6 @@ Le skill, i server MCP e gli strumenti che uso con Claude Code e Claude Desktop,
 /plugin install 1-pack-fundamentals@giofornari
 ```
 
-![Installare un pack: i comandi in un terminale, accanto l'elenco dei pack](docs/hero-install.png)
-
 `claude-mem` sta nel suo marketplace: aggiungilo prima, o l'installazione del pack fallisce. Poi `/reload-plugins`.
 
 - **Un plugin:** `/plugin install <plugin>@giofornari`. Sfoglia tutto con `/plugin`.
@@ -24,20 +22,26 @@ Le skill, i server MCP e gli strumenti che uso con Claude Code e Claude Desktop,
 
 ![Marketplace map](docs/map.it.png)
 
-| Pack | Per | Plugin | Token |
-|---|---|---|---|
-| `1-pack-fundamentals` | Metodo di lavoro, pianificazione, debug, intelligenza sul codice | 8 | ~3.704 |
-| `2-pack-context-memory` | Memoria tra le sessioni, contesto più leggero | 4 | ~3.710 |
-| `3-pack-design` | Design di interfacce, gusto, testi che restano | 8 | ~4.417 |
-| `4-pack-design-advanced` | 3D, euristiche UX, design review | 4 | ~1.481 |
-| `5-pack-learning` | Capire codebase, creare slide e diagrammi | 4 | ~1.648 |
-| `6-pack-research` | Ricerca web, scraping, navigazione | 4 | ~1.214 |
-| `7-pack-content-creation` | Video, motion graphics, contenuti dalle piattaforme | 4 | ~8.578 |
-| `8-pack-marketing-strategy` | SEO, conversione, vendite, marketing | 6 | ~25.686 |
+| Pack | Per | Token |
+|---|---|---:|
+| `1-pack-fundamentals` | Metodo di lavoro, pianificazione, debug, intelligenza sul codice | ~3.704 |
+| `2-pack-context-memory` | Memoria tra le sessioni, contesto più leggero | ~3.710 |
+| `3-pack-design` | Design di interfacce, gusto, testi che restano | ~4.417 |
+| `4-pack-design-advanced` | 3D, euristiche UX, design review | ~1.481 |
+| `5-pack-learning` | Capire codebase, creare slide e diagrammi | ~1.648 |
+| `6-pack-research` | Ricerca web, scraping, navigazione | ~1.214 |
+| `7-pack-content-creation` | Video, motion graphics, contenuti dalle piattaforme | ~8.578 |
+| `8-pack-marketing-strategy` | SEO, conversione, vendite, marketing | ~25.686 |
 
 **Token** è ciò che un pack o un plugin aggiunge a ogni sessione prima che tu lo usi, misurato con `claude plugin details`. I plugin con tag `bonus`, i due plugin dei repo interi e i plugin usciti dal pack Fundamentals non fanno parte di nessun pack.
 
+
+<details>
+<summary>Come è fatto il catalogo</summary>
+
 Una voce è un **pack** (un plugin vuoto le cui `dependencies` sono i suoi membri), l'**essenziale** `fundamentals` (skill riscritte da plugin con licenza permissiva; fonti in `plugins/fundamentals/NOTICE`), un **plugin** (un puntatore a un repo originale), una **skill estratta** (una sola skill di un repo grande, ~20-130 token invece di 1.000+) o un **plugin locale** (in `plugins/`). Il catalogo è `.claude-plugin/marketplace.json`, unica fonte di verità.
+
+</details>
 
 ## Plugin
 

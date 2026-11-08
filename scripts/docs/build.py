@@ -86,15 +86,14 @@ def banner(lang, plugins, packs):
     n_plug = len(plugins) - len(packs)
     tiles = "".join(
         f"<div style='background:{PACKS[i+1][0]};color:{PACKS[i+1][1]};padding:18px 18px 16px;display:flex;flex-direction:column'>"
-        f"<div class=d style='font-size:48px;margin-bottom:14px'>{i+1}</div><div><div class=d style='font-size:32px;line-height:1;min-height:64px'>{html.escape(p['category'].upper())}</div>"
-        f"<div style='font-size:14px;line-height:1.3;margin-top:8px;opacity:.85'>{html.escape(t['use'][i+1])}</div></div></div>"
+        f"<div class=d style='font-size:56px;margin-bottom:6px'>{i+1}</div><div class=d style='font-size:33px;line-height:.95'>{html.escape(p['category'].upper())}</div></div>"
         for i, p in enumerate(packs))
     body = f"""<div style='height:232px;padding:0 70px;position:relative'>
 <div class=d style='font-size:190px;position:absolute;left:70px;top:26px'>SKILLS</div>
 <div class=m style='position:absolute;right:70px;top:62px;background:{PANEL};border:1px solid {LINE};border-radius:10px;padding:20px 24px;font-size:28px'>/plugin marketplace add giofornari/skills</div>
 <div style='position:absolute;left:78px;top:190px;font-size:26px;color:{MUTED}'>{t['sub'].format(packs=len(packs), plugins=n_plug)}</div></div>
-<div style='display:grid;grid-template-columns:repeat(8,minmax(0,1fr));height:188px'>{tiles}</div>"""
-    shot(body, 1600, 420, t["out"] / "banner.png")
+<div style='display:grid;grid-template-columns:repeat(8,minmax(0,1fr));height:150px'>{tiles}</div>"""
+    shot(body, 1600, 382, t["out"] / "banner.png")
 
 def cat(lang, plugins, by, packs):
     t, tok = L[lang], tokens(lang)
@@ -105,41 +104,30 @@ def cat(lang, plugins, by, packs):
         body = f"""<div style='display:flex;height:190px'>
 <div style='width:640px;background:{c};color:{fg};padding:34px 50px'><div class=d style='font-size:{96 if len(p['category'])<=14 else 62}px;white-space:nowrap'>{html.escape(p['category'].upper())}</div>
 <div class=m style='font-size:24px;margin-top:14px;opacity:.75'>{p['name']}</div></div>
-<div style='flex:1;background:{PANEL};padding:0 50px;display:flex;flex-direction:column;justify-content:center'><div style='font-size:30px;line-height:1.25;max-width:760px'>{html.escape(t['use'][i])}</div>
-<div class=m style='margin-top:26px;font-size:20px;color:{MUTED}'>{len(deps)} {t['inpack']} · {(str(len(others)) + ' ' + t['avail'] + ' · ') if others else ''}~{t['num'](tok[i])} {t['tokens']}</div></div></div>"""
+<div style='flex:1;background:{PANEL};padding:0 50px;display:flex;flex-direction:column;justify-content:center'><div style='font-size:34px;line-height:1.25;max-width:820px'>{html.escape(t['use'][i])}</div>
+<div class=m style='margin-top:26px;font-size:24px;color:{MUTED}'>{len(deps)} {t['inpack']} · {(str(len(others)) + ' ' + t['avail'] + ' · ') if others else ''}~{t['num'](tok[i])} {t['tokens']}</div></div></div>"""
         shot(body, 1600, 190, t["out"] / f"cat-{i}-{re.sub(r'[^a-z]+', '-', p['category'].lower()).strip('-')}.png")
 
-def card(name, repo):
-    return (f"<div style='background:{CARD};border:1px solid {LINE};border-radius:8px;padding:14px 16px;min-height:104px;gap:6px;display:flex;flex-direction:column;justify-content:space-between'>"
-            f"<div class=d style='font-size:28px;line-height:1'>{html.escape(name)}</div>"
-            f"<div style='font-size:17px;color:{MUTED};white-space:nowrap;overflow:hidden;text-overflow:ellipsis'>{html.escape(repo)}</div></div>")
-
 def mapimg(lang, plugins, by, packs):
-    t = L[lang]
-    W, rows, H = 2400, [], 190
+    """Pack board: one row per pack, the plugin names it installs. Sized to stay readable at README width."""
+    t, W, rows, H = L[lang], 1200, [], 0
     for i, p in enumerate(packs, 1):
         c, fg = PACKS[i]
-        deps = [d for d in p["dependencies"]]
-        members = []
-        for d in deps:
-            n, _, mk = d.partition("@")
-            members.append(card(pretty(n), repo_of(by[n]) if n in by else f"{mk}/{n}"))
-        others = [q for q in plugins if q["category"] == p["category"] and "pack" not in (q.get("tags") or []) and q["name"] not in {d.split("@")[0] for d in deps}]
-        oc = [card(pretty(q["name"]), repo_of(q)) for q in others]
-        mr, orow = -(-len(members) // 4), -(-len(oc) // 3)
-        h = max(mr, orow, 1) * 116 + 28
-        right = (f"<div style='border-left:1px solid {LINE};padding-left:22px;flex:1;min-width:0'><div style='font-size:16px;letter-spacing:.12em;color:{MUTED};margin-bottom:12px;text-transform:uppercase'>{t['also']}</div>"
-                 f"<div style='display:grid;grid-template-columns:repeat(3,1fr);gap:12px'>{''.join(oc)}</div></div>") if oc else ""
-        rows.append(f"""<div style='display:flex;background:{PANEL};border-radius:10px;overflow:hidden;min-height:{h + (36 if oc else 0)}px;margin-bottom:14px'>
-<div style='width:360px;flex:none;background:{c};color:{fg};padding:0 34px;display:flex;flex-direction:column;justify-content:center'>
-<div class=d style='font-size:54px'>{html.escape(p['category'].upper())}</div><div class=m style='font-size:18px;margin-top:10px;opacity:.75'>{p['name']}</div></div>
-<div style='flex:1;padding:18px;display:flex;gap:22px;align-items:flex-start'><div style='display:grid;grid-template-columns:repeat(4,1fr);gap:12px;width:1010px;flex:none'>{''.join(members)}</div>{right}</div></div>""")
-        H += h + (36 if oc else 0) + 14
-    H += 70
-    body = f"""<div style='padding:44px 50px 0'><div style='display:flex;align-items:baseline;gap:28px;margin-bottom:34px'>
-<div class=d style='font-size:96px'>SKILLS</div><div class=m style='font-size:28px;color:{MUTED}'>/plugin marketplace add giofornari/skills</div></div>{''.join(rows)}
-<div style='text-align:right;color:{MUTED};font-size:22px;padding-top:6px'>{t['entries'].format(n=len(plugins), p=len(packs))}</div></div>"""
-    shot(body, W, H, t["out"] / "map.png" if lang == "en" else t["out"].parent / "map.it.png")
+        names = [d.split("@")[0] for d in p["dependencies"]]
+        chips = "".join(f"<span style='background:{CARD};border:1px solid {LINE};border-radius:8px;padding:9px 16px;font-size:24px;font-weight:600'>{html.escape(n)}</span>" for n in names)
+        lines, x = 1, 0  # greedy wrap with an estimated chip width (24px semibold ~ 12.8px/char + padding)
+        for n in names:
+            w = len(n) * 12.8 + 34 + 10
+            if x + w > 836 and x:
+                lines, x = lines + 1, 0
+            x += w
+        h = max(110, 36 + 59 * lines)
+        H += h + 12
+        rows.append(f"""<div style='display:flex;min-height:{h}px;background:{PANEL};border-radius:10px;overflow:hidden;margin-bottom:12px'>
+<div style='width:320px;flex:none;background:{c};color:{fg};padding:0 28px;display:flex;align-items:center;gap:18px'>
+<div class=d style='font-size:72px'>{i}</div><div class=d style='font-size:42px;line-height:.95'>{html.escape(p['category'].upper())}</div></div>
+<div style='flex:1;padding:18px 22px;display:flex;flex-wrap:wrap;gap:10px;align-content:center'>{chips}</div></div>""")
+    shot(f"<div style='padding:0'>{''.join(rows)}</div>", W, H - 12, t["out"] / "map.png" if lang == "en" else t["out"].parent / "map.it.png")
 
 if __name__ == "__main__":
     what = set(sys.argv[1:]) or {"banner", "cat", "map"}

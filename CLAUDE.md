@@ -15,7 +15,7 @@ Claude Code and Desktop marketplace `giofornari`. `.claude-plugin/marketplace.js
 - Keep sources unpinned and set no `version` in `marketplace.json` or any `plugin.json`: updates then follow upstream. The validator's "No version specified" warnings are expected.
 - Pack names start with a digit (`1-pack-…`): the `/plugin` list sorts alphabetically, and digits sort first.
 - Packs hold dependencies only. Local code lives in `plugins/`: the pack manifests, the essentials, `camoufox`, `codegraph`, `graphify`.
-- `README.md`, `README.it.md` and every PNG in `docs/` (`docs/it/` and `map.it.png` are the Italian set) mirror `marketplace.json`: names, descriptions, categories, token costs. A new plugin needs its Italian description too. Update all of them in the same commit. `banner`, `cat-*` and `map` PNGs are generated: run `python3 scripts/docs/build.py` (needs `google-chrome-stable`; pack tokens come from the README pack table, so edit the READMEs first). `docs/hero-install.png` comes from `scripts/docs/hero-install/` (a stageshow example, filmed with `film.mjs --zoom 0,0,960,400 --scale 2`).
+- `README.md`, `README.it.md` and every PNG in `docs/` (`docs/it/` and `map.it.png` are the Italian set) mirror `marketplace.json`: names, descriptions, categories, token costs. A new plugin needs its Italian description too. Update all of them in the same commit. `banner`, `cat-*` and `map` PNGs are generated: run `python3 scripts/docs/build.py` (needs `google-chrome-stable`; pack tokens come from the README pack table, so edit the READMEs first). `docs/hero-install.png` (not used by the READMEs) comes from `scripts/docs/hero-install/` (a stageshow example, filmed with `film.mjs --zoom 0,0,960,400 --scale 2`).
 
 ## Essentials
 
