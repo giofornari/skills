@@ -60,7 +60,7 @@
     {
       "name": "3-pack-design",
       "source": "./plugins/3-pack-design",
-      "description": "Design: impeccable, taste-skill, emil-kowalski-skills, ui-ux-pro-max, made-to-stick",
+      "description": "Design: impeccable, taste-skill, emil-kowalski-skills, ui-ux-pro-max, made-to-stick, benjitaylor-skills",
       "category": "Design",
       "tags": [
         "pack"
@@ -70,7 +70,8 @@
         "taste-skill",
         "emil-kowalski-skills",
         "ui-ux-pro-max",
-        "made-to-stick"
+        "made-to-stick",
+        "benjitaylor-skills"
       ]
     },
     {
@@ -456,6 +457,19 @@
       "strict": false,
       "skills": [
         "./"
+      ]
+    },
+    {
+      "name": "benjitaylor-skills",
+      "source": {
+        "source": "github",
+        "repo": "benjitaylor/skills"
+      },
+      "description": "Stageshow: faux product UI as stills, feature cards, cursor demos and bento grids, built in React",
+      "category": "Design",
+      "strict": false,
+      "skills": [
+        "./stageshow"
       ]
     },
     {
